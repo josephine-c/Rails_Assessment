@@ -22,5 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+Josephine's changes
 
 This is THE BRYCE CHANGE.

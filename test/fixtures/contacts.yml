@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  contactable: one
+  contactable_type: Contactable
+  address: MyText
+  phone: MyString
+  fax: MyString
+  email: MyString
+
+two:
+  contactable: two
+  contactable_type: Contactable
+  address: MyText
+  phone: MyString
+  fax: MyString
+  email: MyString

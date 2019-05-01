@@ -27,4 +27,13 @@ for i in 1..30
         password: 'valid_password',
         password_confirmation: 'valid_password'
     )
+
+    user.contact = Contact.create(
+        address: Faker::Address.full_address + ", " + Faker::Address.country,
+        fax: Faker::PhoneNumber.phone_number,
+        phone: Faker::PhoneNumber.phone_number,
+        email: user.email
+    )
+    ####
+
 end

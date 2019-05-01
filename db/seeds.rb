@@ -35,5 +35,16 @@ for i in 1..30
         email: user.email
     )
     ####
+end
 
+# Seeds for products
+for i in 1..100
+    item = Product.create(
+        shop_id: rand(1..30),
+        name: Faker::Food.dish,
+        stock: rand(0..10),
+        size: "sml, med, lrg",
+        description: Faker::Food.description,
+        price: rand(100..10000)
+    )
 end

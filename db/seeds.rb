@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+# Seeding for shop table and each shops contact details on the contact table.
 for i in 1..30
     shop = Shop.create(
         name: Faker::Company.name,

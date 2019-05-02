@@ -7,5 +7,4 @@ class User < ApplicationRecord
   has_many :listings, dependent: :destroy
   has_many :delveries, dependent: :destroy
   has_many_attached :pictures
-  #, as: :imageable
 end

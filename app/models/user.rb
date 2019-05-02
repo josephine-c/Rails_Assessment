@@ -6,5 +6,6 @@ class User < ApplicationRecord
   has_one :contact, as: :contactable, dependent: :destroy
   has_many :listings, dependent: :destroy
   has_many :delveries, dependent: :destroy
-  # has_many_attached :pictures, as: :imageable
+  has_many_attached :pictures
+  #, as: :imageable
 end

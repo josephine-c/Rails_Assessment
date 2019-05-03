@@ -11,11 +11,16 @@
 
   <tbody>
     <% @shops.each do |shop| %>
-      <tr>
-        <td><%= link_to 'Show', shop %></td>
-        <td><%= link_to 'Edit', edit_shop_path(shop) %></td>
-        <td><%= link_to 'Destroy', shop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <div class="card">
+    <%= image_tag shop.picture if shop.picture.attached? %>
+      <p><%= shop.name %></p>
+      <p><%= shop.description %></p>
+        <tr>
+          <td><%= link_to 'Show', shop %></td>
+          <td><%= link_to 'Edit', edit_shop_path(shop) %></td>
+          <td><%= link_to 'Destroy', shop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      </div>
     <% end %>
   </tbody>
 </table>

@@ -3,7 +3,7 @@
 <h5><%= @shop.description %></h5>
 <ul>
     <% @products.each do |product| %>
-        <li><%= product.name %></li>
+        <li><%= "#{product.name}: #{product.description} $#{number_with_precision(product.price/100, precision: 2)}"%></li>
     <% end %>
 </ul>
 <%= link_to 'Edit', edit_shop_path(@shop) %> 

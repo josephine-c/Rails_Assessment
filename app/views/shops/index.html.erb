@@ -2,6 +2,12 @@
 
 <h1>Shops</h1>
 
+<% @shops.each do |shop| %>
+    <div class="card">
+    <%# <%= image_tag shop.picture if shop.picture.attached? %>
+    <p><%= shop.name %></p>
+          <p><%= shop.description %></p>
+
 <table>
   <thead>
     <tr>
@@ -10,21 +16,15 @@
   </thead>
 
   <tbody>
-    <% @shops.each do |shop| %>
-    <div class="card">
-    <%= image_tag shop.picture if shop.picture.attached? %>
-      <p><%= shop.name %></p>
-      <p><%= shop.description %></p>
         <tr>
-          <td><%= link_to 'Show', shop %></td>
-          <td><%= link_to 'Edit', edit_shop_path(shop) %></td>
-          <td><%= link_to 'Destroy', shop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Show Products', shop %></td>
+          <%# <td><%= link_to 'Edit', edit_shop_path(shop) %>
+          <%# <td><%= link_to 'Destroy', shop, method: :delete, data: { confirm: 'Are you sure?' } %>
         </tr>
-      </div>
-    <% end %>
   </tbody>
 </table>
-
+ </div>
+  <% end %>
 <br>
 
 <%= link_to 'New Shop', new_shop_path %>

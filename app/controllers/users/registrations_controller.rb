@@ -10,9 +10,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+    unless resource.id == nil
+      contact = params[:user][:contact_attributes]
+      Contact.create(contactable_type: "User", contactable_id: resource.id,phone: contact[:phone], fax: contact[:fax], address: contact[:address])
+    end
+  end
 
   # GET /resource/edit
   # def edit

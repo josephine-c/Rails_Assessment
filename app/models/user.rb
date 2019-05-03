@@ -8,4 +8,8 @@ class User < ApplicationRecord
   has_many :listings, dependent: :destroy
   has_many :delveries, dependent: :destroy
   has_many_attached :pictures
+  def with_contact
+    build_contact if contact.nil?
+    self
+  end
 end

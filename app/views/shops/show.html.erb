@@ -1,4 +1,10 @@
 <p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_shop_path(@shop) %> |
+<h3><%= @shop.name %></h3>
+<h5><%= @shop.description %></h5>
+<ul>
+    <% @products.each do |product| %>
+        <li><%= product.name %></li>
+    <% end %>
+</ul>
+<%= link_to 'Edit', edit_shop_path(@shop) %> 
 <%= link_to 'Back', shops_path %>

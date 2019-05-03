@@ -21,7 +21,7 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <%= f.fields_for :image do |f| %>
+  <%= f.fields_for :contacts do |f| %>
     <div>
       <%= f.label :phone_number %><br />
       <%= f.text_field :phone_number %>

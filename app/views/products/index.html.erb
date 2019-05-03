@@ -11,11 +11,19 @@
 
   <tbody>
     <% @products.each do |product| %>
+    <div class="card">
+    <%= image_tag product.picture if product.picture.attached? %>
+      <p><%= product.name %></p>
+      <p><%= product.description %></p>
+      <p><%= product.stock %></p>
+      <p><%= product.size %></p>
+      <p><%= product.price %></p>
       <tr>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      </div>
     <% end %>
   </tbody>
 </table>

@@ -10,6 +10,7 @@ class ShopsController < ApplicationController
   # GET /shops/1
   # GET /shops/1.json
   def show
+    @products = Product.where(shop_id: @shop.id)
   end
 
   # GET /shops/new

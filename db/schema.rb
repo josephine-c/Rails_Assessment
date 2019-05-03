@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_30_232656) do
+ActiveRecord::Schema.define(version: 2019_05_02_044216) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,14 @@ ActiveRecord::Schema.define(version: 2019_04_30_232656) do
     t.index ["product_id"], name: "index_listings_products_on_product_id"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.bigint "listing_id"
+    t.text "stripe_verification"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listing_id"], name: "index_orders_on_listing_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.bigint "shop_id"
     t.string "name"
@@ -95,14 +103,6 @@ ActiveRecord::Schema.define(version: 2019_04_30_232656) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "transactions", force: :cascade do |t|
-    t.bigint "listing_id"
-    t.text "stripe_verification"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["listing_id"], name: "index_transactions_on_listing_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -124,6 +124,6 @@ ActiveRecord::Schema.define(version: 2019_04_30_232656) do
   add_foreign_key "listings", "users"
   add_foreign_key "listings_products", "listings"
   add_foreign_key "listings_products", "products"
+  add_foreign_key "orders", "listings"
   add_foreign_key "products", "shops"
-  add_foreign_key "transactions", "listings"
 end

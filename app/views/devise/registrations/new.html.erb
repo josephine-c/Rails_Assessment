@@ -1,6 +1,6 @@
 <h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource.with_contact, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
@@ -21,9 +21,26 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+  <%= f.fields_for :contact do |f| %>
+    <div>
+      <%= f.label :phone %><br />
+      <%= f.text_field :phone %>
+    </div>
+
+    <div>
+      <%= f.label :fax %><br />
+      <%= f.text_field :fax %>
+    </div>
+
+    <div>
+      <%= f.label :address %><br />
+      <%= f.text_field :address %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Sign up" %>
+    </div>
+  <% end %>
 <% end %>
 
 <%= render "devise/shared/links" %>

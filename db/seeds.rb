@@ -47,4 +47,22 @@ for i in 1..100
         description: Faker::Food.description,
         price: rand(100..10000)
     )
+    listing = Listing.create(
+        user_id: rand(1..User.last.id),
+        shop_id: rand(1..Shop.last.id),
+        status: 1,
+        total: rand(1200..4000)
+    )
 end
+
+Listing.all.each do |ele|
+    for i in 1..20
+        link = ListingsProduct.create(
+            listing_id: ele.id,
+            product_id: rand(1..Product.last.id),
+            quantity: rand(1..5)
+        )
+    end
+end
+
+

@@ -1,8 +1,12 @@
-<h1>Welcome To Shopperoo</h1>
+ <%= if current_user == nil %>
+  <h1>Welcome To Shopperoo</h1>
 
 
-<%= form_with url: shops_path, method: "get" do |f| %>
-  <%= label_tag(:query, "Search for shop/store:") %>
-  <%= text_field_tag(:query) %>
-  <%= submit_tag("Search") %>
-<% end %>
+  <%= form_with url: shops_path, method: "get" do |f| %>
+    <%= label_tag(:query, "Search for shop/store:") %>
+    <%= text_field_tag(:query) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+  <% else %>
+  <%# write our logged in home here %>
+  <%end%>

@@ -7,8 +7,12 @@
 <% @listings.each do |listing| %>
     <div class="card">
     <%# <%= image_tag shop.picture if shop.picture.attached? %>
-    <p><%= listing.created_at %></p>
-    <p><%= listing.status %></p>
+    <p>Purchaser:<%= listing.user.email %></p>
+    <p>Shop:<%= listing.shop.name %></p>
+    <p>Date created:<%= listing.created_at %></p>
+    <p>Status:<%= listing.status %></p>
+    <p>Total: $<%= listing.total %></p>
+    
     
 <table>
   <thead>

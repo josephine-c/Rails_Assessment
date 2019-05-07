@@ -11,31 +11,31 @@
     </div>
   <% end %>
 
-  <%= form_with model: product, local: true do |form| %>
-    <div>
+  <%# <%= form_with model: product, local: true do |form| %>
+    <%# <div>
         <%= form.label :name %>
-        <%= form.text_field :name %>
-    </div>
-    <div>
-        <%= form.label :description %>
-        <%= form.text_area :description %>
-    </div>
-    <div>
-        <%= form.label :size %>
-        <%= form.radio_field :size %>
-    </div>
-    <div>
-        <%= form.label :stock %>
-        <%= form.number_field :stock %>
-    </div>
-    <div>
-        <%= form.label :price %>
-        <%= form.number_field :price, min: 0 %>
-    </div>
-    <div>
-        <%= form.label :picture %>
-        <%= form.file_field :picture, accept: "image/png,image/gif,image/jpeg,image/jpg" %>
-    </div>
+        <%# <%= form.text_field :name %>
+    <%# </div> %> 
+    <%# <div> %>
+        <%# <%= form.label :description %> 
+        <%# <%= form.text_area :description %>
+    <%# </div> %>
+    <%# <div> %>
+        <%# <%= form.label :size %>
+        <%# <%= form.radio_field :size %>
+    <%# </div> %>
+    <%# <div> %>
+        <%# <%= form.label :stock %> 
+        <%# <%= form.number_field :stock %>
+    <%# </div> %>
+    <%# <div> %>
+        <%# <%= form.label :price %>
+        <%# <%= form.number_field :price, min: 0 %> 
+    <%# </div> %>
+    <%# <div> %>
+        <%# <%= form.label :picture %>
+        <%# <%= form.file_field :picture, accept: "image/png,image/gif,image/jpeg,image/jpg" %>
+    <%# </div> %>
 
   <div class="actions">
     <%= form.submit %>

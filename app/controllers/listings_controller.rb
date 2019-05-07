@@ -4,12 +4,13 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all
+    @listings = Listing.where(status: :paid) 
   end
 
   # GET /listings/1
   # GET /listings/1.json
   def show
+    
   end
 
   # GET /listings/new

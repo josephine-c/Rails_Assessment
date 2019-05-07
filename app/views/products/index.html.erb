@@ -1,7 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Products</h1>
-
+ <% @products.each do |product| %>
+    <div class="card">
+    <%# <%= image_tag product.picture if product.picture.attached? %>
+      <p><%= product.name %></p>
+      <p><%= product.description %></p>
+      <p><%= product.stock %></p>
+      <p><%= product.size %></p>
+      <p><%= product.price %></p>
 <table>
   <thead>
     <tr>
@@ -10,24 +17,16 @@
   </thead>
 
   <tbody>
-    <% @products.each do |product| %>
-    <div class="card">
-    <%= image_tag product.picture if product.picture.attached? %>
-      <p><%= product.name %></p>
-      <p><%= product.description %></p>
-      <p><%= product.stock %></p>
-      <p><%= product.size %></p>
-      <p><%= product.price %></p>
       <tr>
-        <td><%= link_to 'Show Products', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(shop) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show Product', product %></td>
+        <%# <td><%= link_to 'Edit', edit_product_path(shop) %>
+        <%# <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
       </tr>
       </div>
-    <% end %>
+    
   </tbody>
 </table>
-
+<% end %>
 <br>
 
 <%= link_to 'New Product', new_product_path %>

@@ -43,14 +43,14 @@ for i in 1..100
         shop_id: rand(1..30),
         name: Faker::Food.dish,
         stock: rand(0..10),
-        size: "sml, med, lrg",
+        size: rand(0..5),
         description: Faker::Food.description,
         price: rand(100..10000)
     )
     listing = Listing.create(
         user_id: rand(1..User.last.id),
         shop_id: rand(1..Shop.last.id),
-        status: 1,
+        status: rand(1..4),  #0 is pending but a That is only for shopping carts
         total: rand(1200..4000)
     )
 end

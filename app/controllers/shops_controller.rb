@@ -62,7 +62,13 @@ class ShopsController < ApplicationController
     end
   end
 
+  def add_to_cart(item_id, shop_id)
+    ### Exception here: ( if shop_id == session[:shop]/current_shop)
+    session[:cart] << item_id ## Exception to be added for checking if shop is the same as shop for previous items.
+  end
+
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_shop
       @shop = Shop.find(params[:id])

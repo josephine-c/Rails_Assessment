@@ -1,4 +1,8 @@
 <p id="notice"><%= notice %></p>
+<h3><%= @product.name %></h3>
+<h5><%= @product.description %></h5>
+<h5>$<%= (@product.price)/100 %></h5>
+<%= button_to "Add to cart" %>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

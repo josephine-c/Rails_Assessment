@@ -3,10 +3,15 @@
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>
 
-<h1>
-    <%="#{@listing.shop.name}"%>
-</h1>
-
+<h1> Listing for shopping at <%="#{@listing.shop.name}"%></h1>
+  <p>Date created:<%= @listing.created_at %></p>
+  <p>Shop:<%= @listing.shop.name %></p>
+  <p>Shop address:<%= @listing.shop.contact.address %></p>
+  <p>Purchaser:<%= @listing.user.email %></p>
+  <p>Delivery address:<%= @listing.user.contact.address %></p>
+  <p>Status:<%= @listing.status %></p>
+  <p>Total: $<%= @listing.total %></p>
+  
 # Create a list of all items in the listing 
 ## Need access to all items that match listing id through link table.
 

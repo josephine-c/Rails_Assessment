@@ -51,6 +51,12 @@ class CartsController < ApplicationController
     end
   end
 
+
+  def add_to_cart
+    ### Exception here: ( if shop_id == session[:shop]/current_shop)
+      CartProduct.create(cart_id: current_user.cart.id, product_id: params[:product]) ## Exception to be added for checking if shop is the same as shop for previous items.
+  end
+
   # DELETE /carts/1
   # DELETE /carts/1.json
   def destroy

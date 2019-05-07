@@ -28,6 +28,9 @@ for i in 1..30
         password_confirmation: 'valid_password'
     )
 
+    cart = Cart.create(user_id: user.id, shop_id: 1)
+
+
     user.contact = Contact.create(
         address: Faker::Address.full_address + ", " + Faker::Address.country,
         fax: Faker::PhoneNumber.phone_number,

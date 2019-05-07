@@ -5,7 +5,7 @@
     <ul>
         <% @products.each do |product| %>
             <li><%= "#{product.name}: #{product.description} $#{number_with_precision(product.price/100, precision: 2)}"%></li>
-            <td><%= button_to "Add to cart" %></td>
+            <td><%= button_to "Add to cart", {controller: "carts", action: "add_to_cart", product: product.id}, method: :post %></td>
         <% end %>
     </ul>
 

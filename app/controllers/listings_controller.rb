@@ -10,7 +10,7 @@ class ListingsController < ApplicationController
   # GET /listings/1
   # GET /listings/1.json
   def show
-    @products = @listing.products()
+    @listings_products = @listing.listings_products.includes(:product)
   end
 
   # GET /listings/new

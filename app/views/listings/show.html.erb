@@ -4,13 +4,13 @@
 <%= link_to 'Back', listings_path %>
 
 <h1>
-    <%="#{@listing.user.name} from #{@listing.shop.name}"%>
+    <%="#{@listing.shop.name}"%>
 </h1>
 
 # Create a list of all items in the listing 
 ## Need access to all items that match listing id through link table.
 
-<%= javascript_include_tag "payment_button" %>
+
 <button id="stripePayment">Pay Deposit: $<%=number_with_precision(@listing.total/100.0, precision: 2)%></button>
 
 

@@ -15,7 +15,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     unless resource.id == nil
       contact = params[:user][:contact_attributes]
       Contact.create(contactable_type: "User", contactable_id: resource.id,phone: contact[:phone], fax: contact[:fax], address: contact[:address])
+      Cart.create(user_id: resource.id)
     end
+
   end
 
   # GET /resource/edit

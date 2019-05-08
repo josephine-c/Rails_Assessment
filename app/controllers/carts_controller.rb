@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
 
   # GET /carts
@@ -10,6 +11,7 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
+    @cart_products = @cart.cart_products.includes(:product)
   end
 
   # GET /carts/new

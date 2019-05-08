@@ -11,6 +11,7 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
+    @cart_products = @cart.cart_products.includes(:product)
   end
 
   # GET /carts/new

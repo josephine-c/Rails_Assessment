@@ -7,8 +7,65 @@
     <%= label_tag(:query, "Search for shop/store:") %>
     <%= text_field_tag(:query) %>
     <%= submit_tag("Search") %>
-  <% end %>
+<%# need to insert logo picture %>
+  <h2>Happy Shoppings!</h2>
+<div>
+  <h2>My Listings</h2>
+<%= @lists.each do |list| %>
+    <div class="card">
+    <%# <%= image_tag shop.picture if shop.picture.attached? %>
+    <p>Shop:<%= list.shop.name %></p>
+    <p>Date created:<%= list.created_at %></p>
+    <p>Status:<%= list.status %></p>
+    <p>Total: $<%= list.total %></p>
+    
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= link_to 'Show', list %></td>
+        <%# <td><%= link_to 'Edit', edit_listing_path(listing) %>
+        <%# <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </tr>
+  </tbody>
+</table>
+<% end %>
+</div>
+  </tbody>
+</table>
+<% end %>
+</div>
+<div>
+  <h2>My Jobs</h2>
+<%# <% @jobs.each do |list| %> 
+    <%# <div class="card">
+    <%# <%= image_tag shop.picture if shop.picture.attached? %>
+    <%# <p>Purchaser:<%= list.user.email %>
+    <%# <p>Shop:<%= list.shop.name %>
+    <%# <p>Date created:<%= list.created_at %>
+    <%# <p>Status:<%= list.status %>
+    <%# <p>Total: $<%= list.total %>
+<table>
+  <thead>
+    <tr>
+      <%# <th colspan="3"></th> %>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <%# <td><%= link_to 'Show', listing %>
+  <%# <% end %>
+  </tr>
+  </tbody>
+</table>
+
 <% else %>
   <%# write our not logged in home %>
-  <h1>Show if not logged in.</h1>
-<%end%>
+  <h2>Your adventure to happy fast shopping awaits! Join or Login now</h2>   
+<% end %>

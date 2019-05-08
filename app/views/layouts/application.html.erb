@@ -18,7 +18,7 @@
     <% if(current_user != nil) %>
     <%= link_to "Shops", shops_path %>
     <%= link_to "Jobs Available", listings_path %>
-    <%= link_to "Logout", root_path %>
+    <%= link_to "logout", destroy_user_session_path, method: "DELETE" if user_signed_in? %>
     <% else %>
     <%# write our not logged in home %>
     <%= link_to "Login", new_user_session_path %>

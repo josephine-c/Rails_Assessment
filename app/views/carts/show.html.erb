@@ -1,12 +1,13 @@
 <p id="notice"><%= notice %></p>
     <% total = 0 %>
     <% @cart_products.each do |cp| %>
+        <% p "TESTING :::::: #{cp} ::::::::::::" %>
       <p>Name: <%= cp.product.name %></p>
       <p>Cost: $<%= number_with_precision(cp.product.price/100.0, precision: 2) %></p>
       <% total += cp.product.price %>
       <%= link_to 'Remove' %>
     <% end %>
     <p>Total: $<%= number_with_precision(total/100.0, precision: 2) %></p>
-    <%= link_to 'Checkout'%>
+    <%= link_to 'Checkout', {controller: "listings", action: "create", cart_id: @cart_products.first.cart_id}, method: :post %>
 
 

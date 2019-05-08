@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "/", to: "pages#index", as: "root"
   post "/addtocart", to: "carts#add_to_cart"
+  post "/statusaccepted", to: "listings#set_accepted"
 end

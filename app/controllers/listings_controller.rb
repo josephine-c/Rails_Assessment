@@ -33,6 +33,7 @@ class ListingsController < ApplicationController
   # POST /listings
   # POST /listings.json
   def create
+    ######OLD GENERATED CREATE METHOD
     # @listing = Listing.new(listing_params)
 
     # respond_to do |format|

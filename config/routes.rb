@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get "/", to: "pages#index", as: "root"
   post "/addtocart", to: "carts#add_to_cart"
   post "/statusaccepted", to: "listings#set_accepted"
+  post "/payments", to: "payments#stripe"
+  get "/payments/success", to: "payments#success"
 end

@@ -12,6 +12,25 @@ class CartsController < ApplicationController
   # GET /carts/1.json
   def show
     @cart_products = @cart.cart_products.includes(:product)
+    stripe_session = Stripe::Checkout::Session.create(
+      payment_method_types: ['card'],
+      client_reference_id: current_user.id,
+      line_items: [{
+
+          name: "My shopping list",
+          amount: 100, # Test value
+          currency: 'aud',
+          quantity: 1,
+      }],
+      payment_intent_data: {
+          metadata: {
+              listing_id: @cart.id
+          }
+      },
+      success_url: 'http://localhost:3000/payments/success',
+      cancel_url: 'http://localhost:3000/cancel',
+      )
+  @stripe_session_id = stripe_session.id
   end
 
   # GET /carts/new
@@ -56,6 +75,13 @@ class CartsController < ApplicationController
 
   def add_to_cart
     ### Exception here: ( if shop_id == session[:shop]/current_shop)
+      unless current_user.cart.total == nil
+        current_user.cart.total += Product.find(params[:product]).price()
+        current_user.cart.save
+      else
+        current_user.cart.total = 0
+        current_user.cart.save()
+      end
       CartProduct.create(cart_id: current_user.cart.id, product_id: params[:product]) ## Exception to be added for checking if shop is the same as shop for previous items.
   end
 

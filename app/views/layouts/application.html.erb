@@ -16,13 +16,13 @@
     <%= link_to "Home", root_path %>
 
     <% if(current_user != nil) %>
-    <%= link_to "Shops", shops_path %>
-    <%= link_to "Jobs Available", listings_path %>
-    <%= link_to "logout", destroy_user_session_path, method: "DELETE" if user_signed_in? %>
+      <%= link_to "Shops", shops_path %>
+      <%= link_to "Jobs Available", listings_path %>
+      <%= link_to "logout", destroy_user_session_path, method: "DELETE" if user_signed_in? %>
     <% else %>
     <%# write our not logged in home %>
-    <%= link_to "Login", new_user_session_path %>
-    <%= link_to "Join", new_user_registration_path %>
+      <%= link_to "Login", new_user_session_path %>
+      <%= link_to "Join", new_user_registration_path %>
     <% end %>
 
     <%= yield %>

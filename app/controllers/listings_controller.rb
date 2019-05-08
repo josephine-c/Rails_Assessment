@@ -13,6 +13,14 @@ class ListingsController < ApplicationController
     @listings_products = @listing.listings_products.includes(:product)
   end
 
+  # The following method updates the status from paid to accepted for a listing
+  def set_accepted
+    Delivery.create(user_id: current_user.id, listing_id: params[:listing_id])
+    @listing = Listing.find(params[:listing_id])
+    @listing.status = 2
+    @listing.save
+  end
+
   # GET /listings/new
   def new
     @listing = Listing.new

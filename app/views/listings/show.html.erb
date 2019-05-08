@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%# <%= link_to 'Edit', edit_listing_path(@listing) %> 
 <%= link_to 'Back', listings_path %>
+<%= link_to 'Accept Job', {controller: "listings", action: "set_accepted", listing_id: @listing.id}, method: :post %>
 
 <h1> Listing for shopping at <%="#{@listing.shop.name}"%></h1>
   <p>Date created:<%= @listing.created_at %></p>
@@ -16,10 +17,8 @@
    
   <% end %>
 
-  <p>Total: $<%= (@listing.total)/100 %></p>
+  <p>Total: $<%= (@listing.total)/100.0 %></p>
   <p>Purchaser:<%= @listing.user.email %></p>
   <p>Delivery address:<%= @listing.user.contact.address %></p>
   <p>Status: <%= @listing.status %></p>
   <p>Comission (2% of total): $<%= ((@listing.total)/100)*0.02 %></p>
-
-<button id="acceptJob">Accept Job</button>

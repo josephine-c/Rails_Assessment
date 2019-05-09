@@ -12,7 +12,7 @@ class CartsController < ApplicationController
   # GET /carts/1.json
   def show
     @cart_products = @cart.cart_products.includes(:product)
-    unless CartProduct.where(cart_id: current_user.cart.id) != nil
+    unless CartProduct.where(cart_id: current_user.cart.id).empty?
       stripe_session = Stripe::Checkout::Session.create(
         payment_method_types: ['card'],
         client_reference_id: current_user.id,

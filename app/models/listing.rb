@@ -7,3 +7,4 @@ class Listing < ApplicationRecord
   has_many :products, through: :listings_product, dependent: :destroy
   has_one :delivery, dependent: :destroy
 end
+

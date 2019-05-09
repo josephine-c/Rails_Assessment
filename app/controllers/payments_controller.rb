@@ -5,5 +5,8 @@ class PaymentsController < ApplicationController
     end
 
     def success
+        # check stripe success token
+        Listing.create()
+        current_user.clear_cart
     end
 end

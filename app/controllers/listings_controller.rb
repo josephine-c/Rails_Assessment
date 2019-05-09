@@ -34,19 +34,7 @@ class ListingsController < ApplicationController
   # POST /listings
   # POST /listings.json
   def create
-    ######OLD GENERATED CREATE METHOD
-    # @listing = Listing.new(listing_params)
-
-    # respond_to do |format|
-    #   if @listing.save
-    #     format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
-    #     format.json { render :show, status: :created, location: @listing }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @listing.errors, status: :unprocessable_entity }
-    #   end
-    # end
-    @listing = Listing.new(user_id: current_user.id, shop_id: Cart.find(params[:cart_id]).shop_id, status: 0)
+    @listing = Listing.new(user_id: current_user.id, shop_id: current_user.cart.shop_id, status: 1, total: current_user.cart.total)
     local_total = 0
     CartProduct.where(cart_id: params[:cart_id]).each do |cart_product|
       ListingsProduct.create(listing_id: @listing.id, product_id: cart_product.id)

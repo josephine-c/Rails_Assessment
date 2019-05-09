@@ -1,13 +1,36 @@
 <p id="notice"><%= notice %></p>
-    <% total = 0 %>
-    <% @cart_products.each do |cp| %>
-        <% p "TESTING :::::: #{cp} ::::::::::::" %>
-      <p>Name: <%= cp.product.name %></p>
-      <p>Cost: $<%= number_with_precision(cp.product.price/100.0, precision: 2) %></p>
-      <% total += cp.product.price %>
-      <%= link_to 'Remove' %>
+
+<div class="title-container">
+  <h1>My Cart</h1>
+</div>
+
+  <% total = 0 %>
+
+<div class="cart">
+  <% @cart_products.each do |cp| %>
+    <% p "TESTING :::::: #{cp} ::::::::::::" %>
+        <div class="card">
+            <div class="thumbnail">
+            <%# <%= image_tag product picture if attached? %>
+                <div class="caption">
+                  <p>Name: <%= cp.product.name %></p>
+                  <p>Cost: $<%= number_with_precision(cp.product.price/100.0, precision: 2) %></p>
+                  <% total += cp.product.price %>
+                  <p><%= link_to 'Remove', class: "btn btn-default" %></p>
+                </div>
+            </div>
+        </div>
     <% end %>
     <p>Total: $<%= number_with_precision(total/100.0, precision: 2) %></p>
-    <%= link_to 'Checkout', {controller: "listings", action: "create", cart_id: @cart_products.first.cart_id}, method: :post %>
+    <%= link_to 'Checkout', {controller: "listings", action: "create", cart_id: @cart_products.first.cart_id}, method: :post, class: "btn btn-default"  %>
+</div>
 
-
+    <%# <% @cart_products.each do |cp| %>
+        <%# <% p "TESTING :::::: #{cp} ::::::::::::" %>
+      <%# <p>Name: <%= cp.product.name %>
+      <%# <p>Cost: $<%= number_with_precision(cp.product.price/100.0, precision: 2) %>
+      <%# <% total += cp.product.price %> 
+      <%# <%= link_to 'Remove' %> 
+    <%# <% end %> 
+    <%# <p>Total: $<%= number_with_precision(total/100.0, precision: 2) %>
+    <%# <%= link_to 'Checkout', {controller: "listings", action: "create", cart_id: @cart_products.first.cart_id}, method: :post %> 

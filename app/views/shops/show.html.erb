@@ -1,13 +1,25 @@
 <p id="notice"><%= notice %></p>
-<h3><%= @shop.name %></h3>
-<h5><%= @shop.description %></h5>
-
-    <ul>
-        <% @products.each do |product| %>
-            <li><%= "#{product.name}: #{product.description} $#{number_with_precision(product.price/100, precision: 2)}"%></li>
-            <td><%= button_to "Add to cart", {controller: "carts", action: "add_to_cart", product: product.id}, method: :post %></td>
-        <% end %>
-    </ul>
-
-<%= link_to 'Edit', edit_shop_path(@shop) %> 
 <%= link_to 'Back', shops_path %>
+
+<div class="title-container">
+    <h1><%= @shop.name %></h1>
+</div>
+
+<h2><%= @shop.description %></h2>
+
+<div class="products">
+    <% @products.each do |product| %>
+        <div class="card">
+            <div class="thumbnail">
+                <div class="caption">
+                    <%# <%= image_tag shop.picture if shop.picture.attached? %>
+                    <p><%= "#{product.name}: #{product.description} $#{number_with_precision(product.price/100, precision: 2)}"%></p>
+                    <p><%= button_to "Add to cart", {controller: "carts", action: "add_to_cart", product: product.id}, method: :post %></p>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>
+  
+<br>
+<%# <%= link_to 'Edit', edit_shop_path(@shop) %> 

@@ -5,7 +5,7 @@
       <p>Name: <%= cp.product.name %></p>
       <p>Cost: $<%= number_with_precision(cp.product.price/100.0, precision: 2) %></p>
       <% total += cp.product.price %>
-      <%= link_to 'Remove' %>
+      <%= link_to 'Remove', {controller: "carts", action: "remove_from_cart", cart_product_id: cp.id}, method: :post %>
     <% end %>
     <p>Total: $<%= number_with_precision(total/100.0, precision: 2) %></p>
     <%# <div id="stripe_redirect"> %>

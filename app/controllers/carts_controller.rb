@@ -12,26 +12,27 @@ class CartsController < ApplicationController
   # GET /carts/1.json
   def show
     @cart_products = @cart.cart_products.includes(:product)
-    byebug
-    stripe_session = Stripe::Checkout::Session.create(
-      payment_method_types: ['card'],
-      client_reference_id: current_user.id,
-      line_items: [{
+    unless CartProduct.where(cart_id: current_user.cart.id) != nil
+      stripe_session = Stripe::Checkout::Session.create(
+        payment_method_types: ['card'],
+        client_reference_id: current_user.id,
+        line_items: [{
 
-          name: "My shopping list",
-          amount: current_user.cart.total, # Cart total
-          currency: 'aud',
-          quantity: 1,
-      }],
-      payment_intent_data: {
-          metadata: {
-              listing_id: @cart.id
-          }
-      },
-      success_url: 'http://localhost:3000/payments/success',
-      cancel_url: 'http://localhost:3000/cancel',
-      )
-  @stripe_session_id = stripe_session.id
+            name: "My shopping list",
+            amount: current_user.cart.total, # Cart total
+            currency: 'aud',
+            quantity: 1,
+        }],
+        payment_intent_data: {
+            metadata: {
+                listing_id: @cart.id
+            }
+        },
+        success_url: 'http://localhost:3000/payments/success',
+        cancel_url: 'http://localhost:3000/cancel',
+        )
+    @stripe_session_id = stripe_session.id
+    end
   end
 
   # GET /carts/new
@@ -76,9 +77,36 @@ class CartsController < ApplicationController
 
   def add_to_cart
     ### Exception here: ( if shop_id == session[:shop]/current_shop)
-      current_user.cart.total += Product.find(params[:product]).price()
-      current_user.cart.save
+      # current_user.cart.total += Product.find(params[:product]).price()
+      # current_user.cart.save
       CartProduct.create(cart_id: current_user.cart.id, product_id: params[:product]) ## Exception to be added for checking if shop is the same as shop for previous items.
+      update_cart_total
+  end
+
+  #Destroys the item that matches
+  def remove_from_cart
+    p "running remove form cart method"
+    CartProduct.destroy(params[:cart_product_id])
+    update_cart_total
+    redirect_to current_user.cart
+  end
+
+  #destroys all CartProducts associated with cart
+  def clear_cart
+    p "running clear cart method"
+    CartProduct.destroy(CartProduct.where(cart_id: current_user.cart.id))
+    update_cart_total
+    redirect_to current_user.cart
+  end
+
+  # Finds all items 
+  def update_cart_total
+    total = 0
+    CartProduct.where(cart_id: current_user.cart.id).each do |cart_product|
+      total += Product.find(cart_product.product_id).price
+    end
+    current_user.cart.total = total
+    current_user.cart.save()
   end
 
   # DELETE /carts/1

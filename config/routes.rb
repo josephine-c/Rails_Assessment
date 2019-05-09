@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   post "/addtocart", to: "carts#add_to_cart"
   post "/statusaccepted", to: "listings#set_accepted"
   post "/payments", to: "payments#stripe"
+  post "/removefromcart", to: "carts#remove_from_cart"
   get "/payments/success", to: "payments#success"
+
 end

@@ -1,13 +1,32 @@
 <p id="notice"><%= notice %></p>
+<% unless @cart_products == nil %>
     <% total = 0 %>
     <% @cart_products.each do |cp| %>
-        <% p "TESTING :::::: #{cp} ::::::::::::" %>
       <p>Name: <%= cp.product.name %></p>
       <p>Cost: $<%= number_with_precision(cp.product.price/100.0, precision: 2) %></p>
       <% total += cp.product.price %>
-      <%= link_to 'Remove' %>
+      <%= link_to 'Remove', {controller: "carts", action: "remove_from_cart", cart_product_id: cp.id}, method: :post %>
     <% end %>
     <p>Total: $<%= number_with_precision(total/100.0, precision: 2) %></p>
-    <%= link_to 'Checkout', {controller: "listings", action: "create", cart_id: @cart_products.first.cart_id}, method: :post %>
+    <%# <div id="stripe_redirect"> %>
+    <%# <%= link_to 'Checkout', {controller: "listings", action: "create", cart_id: @cart_products.first.cart_id}, method: :post %>
+    <%# </div> %>
+    <button id="stripe_redirect">Checkout</button>
 
+  <script>
+  document.getElementById("stripe_redirect").addEventListener("click", function() {
+  var stripe = Stripe('<%= Rails.application.credentials.dig(:stripe, :public)%>');
 
+  stripe.redirectToCheckout({
+      sessionId: '<%= @stripe_session_id%>',
+    }).then(function (result) {
+      // If `redirectToCheckout` fails due to a browser or network
+      // error, display the localized error message to your customer
+      // using `result.error.message`.
+    });
+  });
+  </script>
+
+<% else %>
+  <p>Cart is empty</p>
+<% end %>

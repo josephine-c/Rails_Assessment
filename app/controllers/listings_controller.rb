@@ -35,12 +35,9 @@ class ListingsController < ApplicationController
   # POST /listings.json
   def create
     @listing = Listing.new(user_id: current_user.id, shop_id: current_user.cart.shop_id, status: 1, total: current_user.cart.total)
-    local_total = 0
     CartProduct.where(cart_id: params[:cart_id]).each do |cart_product|
       ListingsProduct.create(listing_id: @listing.id, product_id: cart_product.id)
-    local_total += cart_product.product.price
     end
-    @listing.total = local_total
     @listing.save
   end
 

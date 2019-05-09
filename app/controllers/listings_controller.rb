@@ -34,11 +34,10 @@ class ListingsController < ApplicationController
   # POST /listings
   # POST /listings.json
   def create
-    @listing = Listing.new(user_id: current_user.id, shop_id: current_user.cart.shop_id, status: 1, total: current_user.cart.total)
-    CartProduct.where(cart_id: params[:cart_id]).each do |cart_product|
-      ListingsProduct.create(listing_id: @listing.id, product_id: cart_product.id)
-    end
-    @listing.save
+    # @listing = Listing.create(user_id: current_user.id, shop_id: current_user.cart.shop_id, status: 1, total: current_user.cart.total)
+    # CartProduct.where(current_user.cart.id).each do |cart_product|
+    #   ListingsProduct.create(listing_id: @listing.id, product_id: cart_product.id)
+    # end
   end
 
   # PATCH/PUT /listings/1

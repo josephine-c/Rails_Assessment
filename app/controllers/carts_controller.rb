@@ -15,9 +15,9 @@ class CartsController < ApplicationController
     unless CartProduct.where(cart_id: current_user.cart.id).empty?
       stripe_session = Stripe::Checkout::Session.create(
         payment_method_types: ['card'],
+        customer_email: current_user.email,
         client_reference_id: current_user.id,
         line_items: [{
-
             name: "My shopping list",
             amount: current_user.cart.total, # Cart total
             currency: 'aud',

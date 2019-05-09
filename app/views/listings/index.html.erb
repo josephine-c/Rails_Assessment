@@ -1,7 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listings</h1>
+<h1>Shopperoo Listings</h1>
 
+<%= link_to 'New Listing', new_listing_path %>
+
+<% @listings.each do |listing| %>
+    <div class="card">
+    <%# <%= image_tag shop.picture if shop.picture.attached? %>
+    <p>Purchaser:<%= listing.user.email %></p>
+    <p>Shop:<%= listing.shop.name %></p>
+    <p>Date created:<%= listing.created_at %></p>
+    <p>Status:<%= listing.status %></p>
+    <p>Total: $<%= listing.total %></p>
+    
+    
 <table>
   <thead>
     <tr>
@@ -10,16 +22,13 @@
   </thead>
 
   <tbody>
-    <% @listings.each do |listing| %>
       <tr>
         <td><%= link_to 'Show', listing %></td>
-        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Accept Job', edit_listing_path(listing) %></td>
+        <%# <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
       </tr>
-    <% end %>
+    
   </tbody>
 </table>
-
+<% end %>
 <br>
-
-<%= link_to 'New Listing', new_listing_path %>

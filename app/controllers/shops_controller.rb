@@ -10,6 +10,7 @@ class ShopsController < ApplicationController
   # GET /shops/1
   # GET /shops/1.json
   def show
+    @products = Product.where(shop_id: @shop.id)
   end
 
   # GET /shops/new
@@ -62,6 +63,7 @@ class ShopsController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_shop
       @shop = Shop.find(params[:id])

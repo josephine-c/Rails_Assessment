@@ -4,12 +4,22 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all
+    @listings = Listing.where(status: :paid) 
   end
 
   # GET /listings/1
   # GET /listings/1.json
   def show
+    @listings_products = @listing.listings_products.includes(:product)
+  end
+
+  # The following method updates the status from paid to accepted for a listing
+  def set_accepted
+    Delivery.create(user_id: current_user.id, listing_id: params[:listing_id])
+    @listing = Listing.find(params[:listing_id])
+    @listing.status = 2
+    @listing.save
+    redirect_to root_path
   end
 
   # GET /listings/new
@@ -24,17 +34,10 @@ class ListingsController < ApplicationController
   # POST /listings
   # POST /listings.json
   def create
-    @listing = Listing.new(listing_params)
-
-    respond_to do |format|
-      if @listing.save
-        format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
-        format.json { render :show, status: :created, location: @listing }
-      else
-        format.html { render :new }
-        format.json { render json: @listing.errors, status: :unprocessable_entity }
-      end
-    end
+    # @listing = Listing.create(user_id: current_user.id, shop_id: current_user.cart.shop_id, status: 1, total: current_user.cart.total)
+    # CartProduct.where(current_user.cart.id).each do |cart_product|
+    #   ListingsProduct.create(listing_id: @listing.id, product_id: cart_product.id)
+    # end
   end
 
   # PATCH/PUT /listings/1

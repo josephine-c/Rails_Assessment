@@ -28,13 +28,16 @@ for i in 1..30
         password_confirmation: 'valid_password'
     )
 
+
+   
+    cart = Cart.create(user_id: user.id, shop_id: 1, total: 0)
     user.contact = Contact.create(
         address: Faker::Address.full_address + ", " + Faker::Address.country,
         fax: Faker::PhoneNumber.phone_number,
         phone: Faker::PhoneNumber.phone_number,
         email: user.email
     )
-    ####
+
 end
 
 # Seeds for products
@@ -43,8 +46,26 @@ for i in 1..100
         shop_id: rand(1..30),
         name: Faker::Food.dish,
         stock: rand(0..10),
-        size: "sml, med, lrg",
+        size: rand(0..5),
         description: Faker::Food.description,
         price: rand(100..10000)
     )
+    listing = Listing.create(
+        user_id: rand(1..User.last.id),
+        shop_id: rand(1..Shop.last.id),
+        status: rand(1..4),  #0 is pending but a That is only for shopping carts
+        total: rand(1200..4000)
+    )
 end
+
+Listing.all.each do |ele|
+    for i in 1..20
+        link = ListingsProduct.create(
+            listing_id: ele.id,
+            product_id: rand(1..Product.last.id),
+            quantity: rand(1..5)
+        )
+    end
+end
+
+

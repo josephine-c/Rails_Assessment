@@ -42,27 +42,27 @@
 
   <div>
     <h2>My Jobs</h2>
-      <%# <% @jobs.each do |list| %> 
-      <%# <div class="card">
+      <%= @deliveries.each do |delivery| %> 
+      <div class="card">
       <%# <%= image_tag shop.picture if shop.picture.attached? %>
-      <%# <p>Purchaser:<%= list.user.email %>
-      <%# <p>Shop:<%= list.shop.name %>
-      <%# <p>Date created:<%= list.created_at %>
-      <%# <p>Status:<%= list.status %>
-      <%# <p>Total: $<%= list.total %>
+      <p>Purchaser:<%= delivery.user.email %></p>
+      <p>Shop:<%= delivery.shop.name %></p>
+      <p>Date created:<%= delivery.created_at %></p>
+      <p>Status:<%= delivery.status %></p>
+      <p>Total: $<%= delivery.total %></p>
   <table>
     <thead>
       <tr>
-        <%# <th colspan="3"></th> %>
+        <th colspan="3"></th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <%# <td><%= link_to 'Show', listing %>
+        <td><%= link_to 'Show', delivery %></td>
       </tr>
     </tbody>
     </table>
-    <%# <% end %>
+    <% end %>
   </div>
 <% end %>
 

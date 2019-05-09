@@ -24,7 +24,7 @@
   <tbody>
       <tr>
         <td><%= link_to 'Show', listing %></td>
-        <td><%= link_to 'Accept Job', edit_listing_path(listing) %></td>
+        <%# <td><%= link_to 'Accept Job', {controller: "listings", action: "set_accepted", listing_id: @listing.id}, method: :post %>
         <%# <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
       </tr>
     

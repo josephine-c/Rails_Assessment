@@ -148,13 +148,19 @@ Having a fun play of words as the name of the App (i.e. Shopperoo = Shopping + K
 * As **MonsterThreads**, I want to become more accessible to customers so I can generate more revenue.
 
 ### **3. A workflow diagram of the user journey/s**
+
+Inital User journey/s
+![Shopperoo's inital workflow dagram](./docs/user_flow_v1.jpg)
+
 [MAKE & INSERT IMAGE]
 
 ### **4. Wireframes**
-Inital low-fid Wireframes
-![Shopperoo's inital wireframes](./docs/wireframe_v1a.jpg)
+Inital low-fid Wireframes 1
+![Shopperoo's inital wireframes a](./docs/wireframe_v1a.jpg)
+Inital low-fid Wireframes 2
+![Shopperoo's inital wireframes b](./docs/wireframe_v1b.jpg)
 
-[BRYCE INSERT]
+[BRYCE INSERT FINAL]
 
 ### **5. Database Entity Relationship Diagrams (ERD)**
 ![Shopperoo's Database Entity Relationship Diagram](./docs/ERD_Shopperoo_v6.png)

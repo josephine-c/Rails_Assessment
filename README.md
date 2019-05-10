@@ -122,13 +122,13 @@ The Shopperoo app resolves the problem of shopping for items which users are usu
 
 ## Design Documentation
 ### 1. Design process 
-i. **Mood board** (developed using Pintrest)
+i. **Mood board** (developed using Pintrest) Ideally the shops in Shopperoo would give an online prescence to small boutique buisnesses which may not have an online store/wesbite. Images from various store catorgies range from bookstores, stationary, art/craft supplies stores, baby shops, women/mens's clothing and jewellry stores, bicycle shops, hiking/sporting goods stores, shoe stores and other cute and quaint shops. There is an industrial, handmade, minimalistic feel to the mood/vibe of the mood board.
 
 ![Shopperoo's Mood Board](./docs/MoodBoard-shopperoo-2019-05-06-15_09_09.png)
 
-ii. **Color Scheme** (sourced using Canva)
+ii. **Color Scheme** (sourced using Canva) From the mood board one of the pictures from a bicycle shop was used to develop a color palette/scheme (see image below) for the Shopperoo App.
 
-![Shopperoo's Color Scheme](./docs/Shopperoo_color_scheme.png)
+![Shopperoo's Color Scheme](./docs/Shopperoo_color_scheme_v2.png)
 
 google fonts, 
 

@@ -136,11 +136,14 @@ Ideally the shops in Shopperoo would give an online prescence to small boutique 
 
 **iii. Typography/Font Design** 
 
-Using Google Fonts, two fonts were selected to be used in the Shopperoo App, to maintain the 'industrial/minimalistic feel' branding and maintain consistency throughout the App.
+Using Google Fonts, two fonts were selected to be used in the Shopperoo App, to maintain the 'industrial/minimalistic feel' branding and maintain consistency throughout the App. These are Stardos Stencil and Poiret One (see examples below).
+![Shopperoo's Google Fonts](./docs/Shopperoo_GoogleFonts.png)
 
 **iv. Logo Design**
 
-Having a fun play of words as the name of the App (i.e. Shopperoo = Shopping + Kanga"Roo")
+Having a fun play of words as the name of the App (i.e. Shopperoo = Shopping + Kanga"Roo"), we designed a logo of a kangaroo carrying a pink parcel. Pink was chosen as a happy joyful color, expressing 'happiness' to the users recieving their package.
+
+![Shopperoo's Logo](./docs/shopperoo_v2_logo.png)
 
 ### **2. User stories**:
 * As **Josephine**, I want to be able to get outfit accessories from a cute boutique shop on the other side of town (while I’m busy at work) delivered to me so that I can look my best when delivering my work presentation.
@@ -233,19 +236,21 @@ Inital low-fid Wireframes 2
 
 **1. What is the need (i.e. challenge) that you will be addressing in your project?**
 
-What is the need (i.e. challenge – working rails app what we are making) that you will be addressing in your project? What is it – Rails project that connects people to each other – in a 2 sided market place
-
-Often people do not have time to shop at boutique and small stores as their business hours will clash with a busy work schedule. By linking these people with willing couriers to do the shopping for small fee both parties can enjoy the benefits of the app.
+We are addressing the need of a two-way digital market place (i.e. Web application). Designing a two-sided market place will allow users to connect with each other to either buy or sell goods or services. It is important to address this need of having a two-sided market place to allow globalisation/accessibility of goods and/or services to people who truly need them. In today's society when people are too busy or live/travel remotely, convenience is often found by online shopping (i.e. accessing the interet through a phone or laptop). Therefore it is important to know how to develop and build products such as a Ruby on Rails two-way market place web App!
 
 **2. Identify the problem you’re trying to solve by building this particular marketplace App? Why is it a problem that needs solving?**
 
-(problem you’re trying to solve) by building this particular marketplace App? (this is a 2 sided market place – solution to the problem)Why is it a problem that needs solving?
+The problem we are trying to solve by building a Ruby on Rails two-sided market place is the problem of inaccessibility of products to people who need them. 
 
-Solving the issue of people unable to access shops which are only open during times they are at work during the weekday, and shops that do not have an online presence. It would also solve the issue of waiting for delivery when purchasing items online (e.g. instead of waiting 5-20 day you can get items delivered within 24-48 hrs of purchase, depending on timing of order/listing). This is a problem that needs solving as there are busy people who do not have personal assistants to help them with purchases i.e. Have a wedding on the weekend and I wanted to pick up a formal dress from a boutique dress shop that does not have online shopping and only open from 10am-6pm Mon-Fri. This problem needs solving as Australia shops only operate one hour more than the normal 9-5 job business hours, so there is a very short window for busy corporate people/workers to fit in shopping for items during the weekday.
+**Case-study 1:** The working professional (i.e. working 9am to 5pm) vs. small/regular shops which buisness hours are between 10am to 6pm. Solving the issue of people unable to access shops which are only open during times while they are at work during the weekday, is important as it will allow these busy professionals more of a lunch break than an "errand-run" break, which may lead to better workforce preformance and happier individuals. This problem is quite a big one in Australia, as the majority of our shops typically only operate one hour more than the normal 9-5 job business hours, so there is a very short window for busy corporate people/workers to fit in shopping for items during the weekday.
 
-**3. Describe the project will you be conducting and how. your App will address the needs.**
+**Case-study 2:** Online delivery vs. quick courier delivery by everyday people. This app would also resolve the issue of waiting for long periods to recieve products after purchasing them from online stores that rely on Australia/International Post (e.g. waiting periods of 5-30 days to your home address, and if you're at work, trying to organize when you can pick up the item from the post office if they leave a collecting card). Our App will allow everyday people to complete the shopping orders and deliver them to your preferred address. This means that your items can be delivered as fast as within the next few hours or within the next few days, depending on when you placed your order and how fast a user has accepted the job. This is a problem that needs solving as there are busy people who do not have personal assistants to help them with same day delivery on purchases and lives would be greatly enriched by faster, customizable deliveries (e.g. Have a wedding on the weekend and need pair of formal heels quick).
 
-The features in the app that they can use (cart, checkout etc.)
+**Case-study 3:** Helping visibility of fantastic boutique shops and small-buisnesses that do not have an online presence, to better connect with new and existing customers. Often people do not have time to shop at boutique and small stores as their business hours will clash with a busy work schedule. By linking these people with willing couriers to do the shopping for small fee both parties can enjoy the benefits of the app.
+
+**3. Describe the project you will be conducting and how your App will address the needs.**
+
+The web App we are designing and developing is called Shopperoo. This is a two-sided marketplace, built using Ruby on Rails with PostgreSQL database and deployed on Heroku. Shopperoo is designed to list the products of small boutique stores, allowing Shopperoo users to purchase their desired items from those listed on the App. Users are able to both make purchases (i.e. listings) and work as a shopper/courier (i.e. buy's items from the stores and delivers them to the purchaser) for a fee. The Shopperoo App features cart, checkout..
 
 Describe the project The actual features in the app – cart and check out )(what the project is about, how you fix the issue) will you be conducting and how. your App will address the needs. More detail about q1 - 
 

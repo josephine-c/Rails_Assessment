@@ -1,0 +1,43 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    h1 {
+        margin: 0;
+        font-family: 'Akronim', cursive;
+    }
+}
+
+.own_listing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.shops {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.listings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    width: 30%;
+    min-width: 300px;
+}

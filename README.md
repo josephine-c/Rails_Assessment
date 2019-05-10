@@ -136,7 +136,8 @@ Ideally the shops in Shopperoo would give an online prescence to small boutique 
 
 **iii. Typography/Font Design** 
 
-Using Google Fonts, two fonts were selected to be used in the Shopperoo App, to maintain the 'industrial/minimalistic feel' branding and maintain consistency throughout the App.
+Using Google Fonts, two fonts were selected to be used in the Shopperoo App, to maintain the 'industrial/minimalistic feel' branding and maintain consistency throughout the App. These are Stardos Stencil and Poiret One (see examples below).
+![Shopperoo's Google Fonts](./docs/Shopperoo_GoogleFonts.png)
 
 **iv. Logo Design**
 

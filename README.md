@@ -3,40 +3,41 @@
 ## [ Project - Github Repo](https://github.com/josephine-c/Rails_Assessment)
 ## [Published App - Heroku](https://blooming-lowlands-28068.herokuapp.com/)
 
-### Description: 
+### **Description** 
 The Shopperoo app resolves the problem of shopping for items which users are usually inaccessible to for reasons such as inconvenient store hours (same as user’s work hours) or an absent online store/website (i.e. small business boutique stores). Shopperoo will allow any user to purchase items and any user to be able to forfill the order (i.e. task of buying listed items and delivering them to the purchaser)
 
-### Features:
-* Autherization
+### **Features**:
+* **Authorization**
     - Sign up
     - Log-in
- * Shops
+* **Navigation**
+    - Links
+    - Buttons
+    - Nav bar
+* **Shops**
     - Browse shops
     - Browse items/products associated with shops
- * Cart
-    - Add items to cart
-    - Remove items from cart
-    - Checkout
- * Shopping lists
+* **Shopping lists**
     - Create Lists/jobs
     - View open shoppings lists(Yet to be accpeted)
     - Accept Lists/jobs
     - Mark job status as delivered
-* Navigation
-    - Links
-    - Buttons
-    - Nav bar
-* Payment
+* **Cart**
+    - Add items to cart
+    - Remove items from cart
+    - Checkout
+* **Payment**
     - Stripe redirection
     - Third party payment handling.
 
-### Screenshots:
+### **Shopperoo App Screenshots**
 
-## Tech-stack
-* Ruby on rails
+[INSERT images of finished App]
+
+## **Tech-stack**
+* Ruby on Rails
 * Puma
 * HTML/CSS
-    - Bootstrap
 * Slack
 * Goggle Docs
 * GitHub
@@ -48,40 +49,39 @@ The Shopperoo app resolves the problem of shopping for items which users are usu
 * Ultrahook
 * Stripe
 
-* Gems
+* **Gems**:
     - Devise 
     - Cypress
     - Byebug
     - Bootstrap
     - Stripe
 
-
-### Ruby version: 
+### **Ruby version**:  
 * ruby 2.6.0p0
 
-### System dependencies: 
+### **System dependencies**: 
 * devise
 * aws-sdk-s3 ~> 1.36
 * faker ~> 1.9
 * stripe ~> 4.16
 * ultrahook ~> 0.1.5
 
-* For other dependencies please check the gemfile 
+* *For other dependencies please check the gemfile* 
 
 
-### Deployment instructions
+### **Deployment instructions**
 
     $ gem install bundler
     $ bundle install
 
-### Database creation and initialization
+### **Database creation and initialization**
 
     $ heroku run bundle install
     $ heroku run rails db:create
     $ heroku run rails db:migrate
     $ heroku run rails db:seed
 
-### User Instructions for Shopperoo App
+### **User Instructions for Shopperoo App**
 * [Open site](https://blooming-lowlands-28068.herokuapp.com/)
 * From the landing page navigate to join or login links
 
@@ -108,7 +108,7 @@ The Shopperoo app resolves the problem of shopping for items which users are usu
 * Click 'checkout' button
 * Proceed with stripe checkout.
 * After payment the user will be redirected to the payment success page.
-* Log out when you have finished using the web App
+* Log out when you have finished using the App
 
 #### 5. Completing an ordering job (As a Courier) - Earning Money
 * From the 'home' page
@@ -118,38 +118,45 @@ The Shopperoo app resolves the problem of shopping for items which users are usu
 * This will then redirect you to your homepage and the listing will display under your 'Jobs' list
 * Once a job has been completed click on the 'delivered' button to confirm your job has been completed for your job payment to be processed
 * This job will be removed from your homepage and you are set to chose your next job listing.
-* Log out when you have finished using the web App
+* Log out when you have finished using the App
 
-## Design Documentation
-### 1. Design process 
-i. **Mood board** (developed using Pintrest) Ideally the shops in Shopperoo would give an online prescence to small boutique buisnesses which may not have an online store/wesbite. Images from various store catorgies range from bookstores, stationary, art/craft supplies stores, baby shops, women/mens's clothing and jewellry stores, bicycle shops, hiking/sporting goods stores, shoe stores and other cute and quaint shops. There is an industrial, handmade, minimalistic feel to the mood/vibe of the mood board.
+## **Design Documentation**
+### **1. Design Process** 
+**i. Mood board** (developed using Pintrest) 
+
+Ideally the shops in Shopperoo would give an online prescence to small boutique buisnesses which may not have an online store/wesbite. Images from various store catorgies range from bookstores, stationary, art/craft supplies stores, baby shops, women/mens's clothing and jewellry stores, bicycle shops, hiking/sporting goods stores, shoe stores and other cute and quaint shops. There is an industrial, handmade, minimalistic feel to the mood/vibe of the mood board.
 
 ![Shopperoo's Mood Board](./docs/MoodBoard-shopperoo-2019-05-06-15_09_09.png)
 
-ii. **Color Scheme** (sourced using Canva) From the mood board one of the pictures from a bicycle shop was used to develop a color palette/scheme (see image below) for the Shopperoo App.
+**ii. Color Scheme** (sourced using Canva)
+
+ From the mood board one of the happy pictures from a bicycle shop was used to develop a color palette/scheme (see image below) for the Shopperoo App.
 
 ![Shopperoo's Color Scheme](./docs/Shopperoo_color_scheme_v2.png)
 
-google fonts, 
+**iii. Typography/Font Design** 
 
-* logo
+Using Google Fonts, two fonts were selected to be used in the Shopperoo App, to maintain the 'industrial/minimalistic feel' branding and maintain consistency throughout the App.
 
-### 2. User stories:
-* As Josephine, I want to be able to get outfit accessories from a cute boutique shop on the other side of town (while I’m busy at work) delivered to me so that I can look my best when delivering my work presentation.
-* As Bryce, I want to make money in my spare time performing quick shopping trips, so that I have extra money to spend on the weekend. 
-* As Mandy, I want to become more accessible to customers so I can generate more revenue.
+**iv. Logo Design**
 
-### 3. A workflow diagram of the user journey/s
+Having a fun play of words as the name of the App (i.e. Shopperoo = Shopping + Kanga"Roo")
+
+### **2. User stories**:
+* As **Josephine**, I want to be able to get outfit accessories from a cute boutique shop on the other side of town (while I’m busy at work) delivered to me so that I can look my best when delivering my work presentation.
+* As **Bryce**, I want to make money in my spare time performing quick shopping trips, so that I have extra money to spend on the weekend. 
+* As **MonsterThreads**, I want to become more accessible to customers so I can generate more revenue.
+
+### **3. A workflow diagram of the user journey/s**
 [MAKE & INSERT IMAGE]
 
-### 4. Wireframes 
+### **4. Wireframes**
 [BRYCE INSERT]
 
-### 5. Database Entity Relationship Diagrams (ERD)
+### **5. Database Entity Relationship Diagrams (ERD)**
 ![Shopperoo's Database Entity Relationship Diagram](./docs/ERD_Shopperoo_v6.png)
 
-
-## Details of planning process 
+## **Details of planning process** 
 ### **Project plan & timeline (A & B)**
 
 ### **A. Project plan:**
@@ -180,7 +187,8 @@ google fonts,
 
 **5. DOCUMENTATION** (29.4.2019 - 12.5.2019) - Collecting trello screenshots and working on different aspects of the documentation happens throughout the entire duration of the project, however finalising and compiling will mainly be covered in the last project sprint (Sprint 5 - 9.5.2019 to 12.5.2019)
 
-### **Screenshots of Trello board(s)**
+### **Screenshots of Trello boards during timeline**
+![Trello-1](./)
 [Insert images]
 
 ## Answers to the Short Answer questions (Section 2.2):

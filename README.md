@@ -86,7 +86,7 @@
 * From the landing page navigate to join or login links
 
 #### Home
-* * ![Home page IMG]( "")
+* ![Home page IMG]( "")
 * from any page click the 'home' link in the nav bar.
 
 ##### Sign up 
@@ -97,7 +97,7 @@
 * ![log in IMG]( "")
 * This will take you back to the landing page.
 
-##### Create a shopping list
+##### Purchasing items (As a Purchaser) - Spending Money
 * From the 'home' page
 * Click on 'shops' button in nav bar
 * Find your desired shop within the shops page.
@@ -108,14 +108,61 @@
 * Click 'checkout' button
 * Proceed with stripe checkout.
 * After payment the user will be redirected to the payment success page.
+* Log out when you have finished using the web App
 
-##### Accept a listing
+##### Completing an ordering job (As a Courier) - Earning Money
 * From the 'home' page
 * Click on 'Jobs Available' in the nav bar
 * Click on the Listing Number or 'Show' button to see details of the listing
 * Once happy to take the listing job - click into the listing and click on the 'Accept Job' button at the top of the page
 * This will then redirect you to your homepage and the listing will display under your 'Jobs' list
-* Once a job has been completed click on '
+* Once a job has been completed click on the 'delivered' button to confirm your job has been completed for your job payment to be processed
+* This job will be removed from your homepage and you are set to chose your next job listing.
+* Log out when you have finished using the web App
+
+## Design documentation including,
+### Design process 
+* (mood board – pintrest, 
+* google fonts, 
+* color scheme) [Insert images]
+* logo
+
+### User stories:
+* As Josephine, I want to be able to get outfit accessories from a cute boutique shop on the other side of town (while I’m busy at work) delivered to me so that I can look my best when delivering my work presentation.
+* As Bryce, I want to make money in my spare time performing quick shopping trips, so that I have extra money to spend on the weekend. 
+* As Mandy, I want to become more accessible to customers so I can generate more revenue.
+
+### A workflow diagram of the user journey/s
+[MAKE & INSERT IMAGE]
+
+### Wireframes 
+[BRYCE INSERT]
+
+### Database Entity Relationship Diagrams (ERD)
+[INSERT ERD Jo created]
+
+## Details of planning process 
+### Project plan & timeline
+
+**Project plan:**
+
+**Start date** of project: 29.04.2019
+
+**Sprint 1 - 29.5.2019:** Establishing minimum viable product (MVP), inital wireframes and ERD.
+
+**Sprint 2 - 30.5.2019 - :** Scaffold the Rails application, with PostgreSQL database - work on customising, routes, controllers, models and views
+
+**Sprint 3:** Work on features: User authorisation (using Devise gem), Cash payment (using Stripe gem), active storage of images (using AWS S3)
+
+**Sprint 4:** Work on Design aspects of the web App
+
+**Sprint 5:** Automated testing/Debugging and Deployment on Heroku
+
+**End date** of project: 12.05.2019
+
+### Screenshots of Trello board(s) 
+[Insert images]
+
 
 
 

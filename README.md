@@ -151,6 +151,9 @@ Having a fun play of words as the name of the App (i.e. Shopperoo = Shopping + K
 [MAKE & INSERT IMAGE]
 
 ### **4. Wireframes**
+Inital low-fid Wireframes
+![Shopperoo's inital wireframes](./docs/wireframe_v1a.jpg)
+
 [BRYCE INSERT]
 
 ### **5. Database Entity Relationship Diagrams (ERD)**

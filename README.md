@@ -140,7 +140,9 @@ Using Google Fonts, two fonts were selected to be used in the Shopperoo App, to 
 
 **iv. Logo Design**
 
-Having a fun play of words as the name of the App (i.e. Shopperoo = Shopping + Kanga"Roo")
+Having a fun play of words as the name of the App (i.e. Shopperoo = Shopping + Kanga"Roo"), we designed a logo of a kangaroo carrying a pink parcel. Pink was chosen as a happy joyful color, expressing 'happiness' to the users recieving their package.
+
+![Shopperoo's Logo](./docs/shopperoo_v2_logo.png)
 
 ### **2. User stories**:
 * As **Josephine**, I want to be able to get outfit accessories from a cute boutique shop on the other side of town (while I’m busy at work) delivered to me so that I can look my best when delivering my work presentation.

@@ -33,27 +33,24 @@
 
   <div>
     <h2>My Jobs</h2>
-      <%# <% @jobs.each do |list| %> 
-      <%# <div class="card">
-      <%# <%= image_tag shop.picture if shop.picture.attached? %>
-      <%# <p>Purchaser:<%= list.user.email %>
-      <%# <p>Shop:<%= list.shop.name %>
-      <%# <p>Date created:<%= list.created_at %>
-      <%# <p>Status:<%= list.status %>
-      <%# <p>Total: $<%= list.total %>
-  <table>
-    <thead>
-      <tr>
-        <%# <th colspan="3"></th> %>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <%# <td><%= link_to 'Show', listing %>
-      </tr>
-    </tbody>
-    </table>
-    <%# <% end %>
+        <div class="own_listing">
+          <% @jobs.each do |job| %> 
+            <div class="card">
+                <div class="thumbnail">
+                    <div class="caption">
+                      <%# <%= image_tag shop.picture if shop.picture.attached? %>
+                      <h3>Job <%= job.id %></h3>
+                      <p>Purchaser:<%= job.user.email %></p>
+                      <p>Shop:<%= job.shop.name %></p>
+                      <p>Date created:<%= job.created_at %></p>
+                      <p>Status:<%= job.status %></p>
+                      <p>Total: $<%= job.total %></p>
+                      <p><%= link_to 'Show', job, class: "btn btn-default" %></p>
+                    </div>
+                </div>
+            </div>
+            <% end %>
+        </div>
   </div>
 <% end %>
 

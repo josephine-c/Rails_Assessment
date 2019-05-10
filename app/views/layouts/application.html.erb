@@ -1,32 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>RailsAssessment</title>
+    <title>Shopperoo</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://fonts.googleapis.com/css?family=Akronim" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="normalize.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="https://js.stripe.com/v3/"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <%= link_to "Home", root_path %>
-
-    <% if(current_user != nil) %>
-      <%= link_to "Shops", shops_path %>
-      <%= link_to "Jobs Available", listings_path %>
-      <%= link_to "Cart", current_user.cart %>
-      <%= link_to "logout", destroy_user_session_path, method: "DELETE" if user_signed_in? %>
-    <% else %>
-    <%# write our not logged in home %>
-      <%= link_to "Login", new_user_session_path %>
-      <%= link_to "Join", new_user_registration_path %>
-    <% end %>
-
-    <%= yield %>
+    <header class="container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <%= link_to "Home", root_path, class: "navbar-brand" %>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <% if(current_user != nil) %>
+            <li><%= link_to "Shops", shops_path %></li>
+            <li><%= link_to "Jobs Available", listings_path %></li>
+            <li><%= link_to "Cart", current_user.cart %></li>
+            <li><%= link_to "logout", destroy_user_session_path, method: "DELETE" if user_signed_in? %></li>
+          <% else %>
+            <%# write our not logged in home %>
+            <li><%= link_to "Login", new_user_session_path %></li>
+            <li><%= link_to "Join", new_user_registration_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
+        <%# <p class="notice"><%= notice %>
+        <%# <p class="alert"><%= alert %>
+    <section class="container">
+      <div id="flash">
+        <% flash.each do |key, value| %>
+          <div class="flash alert <%= alert_class(key) %>"><%= value %></div>
+        <% end %>
+      </div>
+        <%= yield %>
+    </section>
   </body>
 </html>

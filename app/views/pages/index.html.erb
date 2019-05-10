@@ -15,6 +15,7 @@
       <h2>My Purchases</h2>
       <div class="own_listing">
         <% @lists.each do |list| %>
+          <% if list.status == "paid" %>
           <div class="card">
               <div class="thumbnail">
                   <div class="caption">
@@ -28,14 +29,16 @@
                   </div>
               </div>
           </div>
+          <% end %>
       <% end %>
     </div>
 
   <div>
-    <h2>My Jobssssss</h2>
+    <h2>My Jobs</h2>
         <div class="own_listing">
           <% @jobs.each do |job| %> 
-            <div class="card">
+            <% if job.status == "accepted" %>
+            <div class="card"> 
                 <div class="thumbnail">
                     <div class="caption">
                       
@@ -49,6 +52,7 @@
                     </div>
                 </div>
             </div>
+            <% end %>
             <% end %>
         </div>
   </div>

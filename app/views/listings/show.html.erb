@@ -6,13 +6,12 @@
 <div class="title-container">
   <h1> Listing for shopping at <%="#{@listing.shop.name}"%></h1>
 
-  <% if @listing.user_id == current_user.id %>
+  <% if @listing.delivery == nil && @listing.user_id != current_user.id %>
   <%= link_to 'Accept Job', {controller: "listings", action: "set_accepted", listing_id: @listing.id}, method: :post, class: "btn btn-default" %>
-  <% else %>
+  <% elsif @listing.delivery != nil && @listing.delivery.user_id == current_user.id %>
   <%= link_to 'Delivered', {controller: "listings", action: "set_delivered", listing_id: @listing.id}, method: :post, class: "btn btn-default" %>
   <% end %>
 </div>
-
   <p>Date created:<%= @listing.created_at %></p>
   <p>Shop:<%= @listing.shop.name %> (Address:<%= @listing.shop.contact.address %>)</p>
   <p>Product List:</p>

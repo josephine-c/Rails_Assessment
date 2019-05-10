@@ -9,16 +9,16 @@
     <%= text_field_tag(:query) %>
     <%= submit_tag("Search") %>
 
-<%# need to insert logo picture %>
+
   <h2>Happy Shoppings!</h2>
     <div>
       <h2>My Purchases</h2>
       <div class="own_listing">
-        <%= @lists.each do |list| %>
+        <% @lists.each do |list| %>
           <div class="card">
               <div class="thumbnail">
                   <div class="caption">
-                      <%# <%= image_tag shop.picture if shop.picture.attached? %>
+                     
                        <h3>Listing <%= list.id %></h3>
                         <p>Shop:<%= list.shop.name %></p>
                         <p>Date created:<%= list.created_at %></p>
@@ -32,13 +32,13 @@
     </div>
 
   <div>
-    <h2>My Jobs</h2>
+    <h2>My Jobssssss</h2>
         <div class="own_listing">
           <% @jobs.each do |job| %> 
             <div class="card">
                 <div class="thumbnail">
                     <div class="caption">
-                      <%# <%= image_tag shop.picture if shop.picture.attached? %>
+                      
                       <h3>Job <%= job.id %></h3>
                       <p>Purchaser:<%= job.user.email %></p>
                       <p>Shop:<%= job.shop.name %></p>

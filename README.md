@@ -188,10 +188,39 @@ Having a fun play of words as the name of the App (i.e. Shopperoo = Shopping + K
 **5. DOCUMENTATION** (29.4.2019 - 12.5.2019) - Collecting trello screenshots and working on different aspects of the documentation happens throughout the entire duration of the project, however finalising and compiling will mainly be covered in the last project sprint (Sprint 5 - 9.5.2019 to 12.5.2019)
 
 ### **Screenshots of Trello boards during timeline**
-![Trello-1](./)
-[Insert images]
+**Initial App ideas Trello Board:**
+![Trello-1](./docs/ScreenShot_2019-04-29-ideas.png)
 
-## Answers to the Short Answer questions (Section 2.2):
+**Agile Project Managment Trello Board from 29.04.2019 to 11.05.2019**
+
+29.04.2019
+![Trello-2](./docs/ScreenShot_2019-04-29-trello1.png)
+
+30.04.2019
+![Trello-3](./docs/ScreenShot_2019-04-30.png)
+
+01.05.2019
+![Trello-4](./docs/ScreenShot_2019-05-01_at_4pm.png)
+
+02.05.2019 am
+![Trello-5](./docs/ScreenShot_2019-05-02.png)
+
+02.05.2019 pm
+![Trello-6](./docs/ScreenShot_2019-05-02_at_3pm.png)
+
+03.05.2019 pm
+![Trello-7](./docs/ScreenShot_2019-05-03_at_4pm.png)
+
+08.05.2019
+![Trello-8](./docs/ScreenShot_2019-05-08.png)
+
+08.05.2019 continued
+![Trello-9](./docs/ScreenShot_2019-05-08b.png)
+
+10.05.2019
+![Trello-10](./docs/ScreenShot_2019-05-10.png)
+
+## **Short Answer questions (Section 2.2):**
 
 **1. What is the need (i.e. challenge) that you will be addressing in your project?**
 

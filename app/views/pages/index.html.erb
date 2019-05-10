@@ -32,18 +32,17 @@
     <h2>My Jobs</h2>
         <div class="own_listing">
           <% @jobs.each do |job| %> 
-            <% if job.status == "accepted" %>
+            <% if job.listing.status == "accepted" %>
             <div class="card"> 
                 <div class="thumbnail">
                     <div class="caption">
-                      
-                      <h3>Job <%= job.id %></h3>
-                      <p>Purchaser:<%= job.user.email %></p>
-                      <p>Shop:<%= job.shop.name %></p>
-                      <p>Date created:<%= job.created_at %></p>
-                      <p>Status:<%= job.status %></p>
-                      <p>Total: $<%= job.total %></p>
-                      <p><%= link_to 'Show', job, class: "btn btn-default" %></p>
+                      <h3>Job <%= job.listing.id %></h3>
+                      <p>Purchaser:<%= job.listing.user.email %></p>
+                      <p>Shop:<%= job.listing.shop.name %></p>
+                      <p>Date created:<%= job.listing.created_at %></p>
+                      <p>Status:<%= job.listing.status %></p>
+                      <p>Total: $<%= job.listing.total %></p>
+                      <p><%= link_to 'Show', job.listing, class: "btn btn-default" %></p>
                     </div>
                 </div>
             </div>

@@ -8,9 +8,10 @@
 
   <% if @listing.delivery == nil && @listing.user_id != current_user.id %>
   <%= link_to 'Accept Job', {controller: "listings", action: "set_accepted", listing_id: @listing.id}, method: :post, class: "btn btn-default" %>
-  <% elsif @listing.delivery != nil && @listing.delivery.user_id == current_user.id %>
+  <% elsif @listing.status == "accepted" %>
   <%= link_to 'Delivered', {controller: "listings", action: "set_delivered", listing_id: @listing.id}, method: :post, class: "btn btn-default" %>
   <% end %>
+
 </div>
   <p>Date created:<%= @listing.created_at %></p>
   <p>Shop:<%= @listing.shop.name %> (Address:<%= @listing.shop.contact.address %>)</p>

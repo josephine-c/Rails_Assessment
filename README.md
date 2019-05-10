@@ -1,10 +1,10 @@
-# README
+# README for Shopperoo App
 
-## [ Project - github link](https://github.com/josephine-c/Rails_Assessment)
+## [ Project - Github Repo](https://github.com/josephine-c/Rails_Assessment)
 ## [Published App - Heroku](https://blooming-lowlands-28068.herokuapp.com/)
 
 ### Description: 
-* The Shopperoo app resolves the problem of shopping for items which users are usually inaccessible to for reasons such as inconvenient store hours (same as user’s work hours) or an absent online store/website (i.e. small business boutique stores). Shopperoo will allow any user to purchase items and any user to be able to forfill the order (i.e. task of buying listed items and delivering them to the purchaser)
+The Shopperoo app resolves the problem of shopping for items which users are usually inaccessible to for reasons such as inconvenient store hours (same as user’s work hours) or an absent online store/website (i.e. small business boutique stores). Shopperoo will allow any user to purchase items and any user to be able to forfill the order (i.e. task of buying listed items and delivering them to the purchaser)
 
 ### Features:
 * Autherization
@@ -120,26 +120,34 @@
 * This job will be removed from your homepage and you are set to chose your next job listing.
 * Log out when you have finished using the web App
 
-## Design documentation including,
-### Design process 
-* (mood board – pintrest, 
-* google fonts, 
-* color scheme) [Insert images]
+## Design Documentation
+### 1. Design process 
+i. **Mood board** (developed using Pintrest)
+
+![Shopperoo's Mood Board](./docs/MoodBoard-shopperoo-2019-05-06-15_09_09.png)
+
+ii. **Color Scheme** (sourced using Canva)
+
+![Shopperoo's Color Scheme](./docs/Shopperoo_color_scheme.png)
+
+google fonts, 
+
 * logo
 
-### User stories:
+### 2. User stories:
 * As Josephine, I want to be able to get outfit accessories from a cute boutique shop on the other side of town (while I’m busy at work) delivered to me so that I can look my best when delivering my work presentation.
 * As Bryce, I want to make money in my spare time performing quick shopping trips, so that I have extra money to spend on the weekend. 
 * As Mandy, I want to become more accessible to customers so I can generate more revenue.
 
-### A workflow diagram of the user journey/s
+### 3. A workflow diagram of the user journey/s
 [MAKE & INSERT IMAGE]
 
-### Wireframes 
+### 4. Wireframes 
 [BRYCE INSERT]
 
-### Database Entity Relationship Diagrams (ERD)
-[INSERT ERD Jo created]
+### 5. Database Entity Relationship Diagrams (ERD)
+![Shopperoo's Database Entity Relationship Diagram](./docs/ERD_Shopperoo_v6.png)
+
 
 ## Details of planning process 
 ### **Project plan & timeline (A & B)**

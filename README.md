@@ -235,6 +235,8 @@ PostgreSQL database will be used in our App as it is an open-source relational d
 
 **7. Identify and describe the production database setup (i.e. postgres instance).**
 
+running postgres - how you setup the database - onto heroko and seed into db
+
 **8. Describe the architecture of your App.**
 
 Users can be both a purchaser and/or a courier/deliverer, tables are made for the orders/listings which are linked to the shops and transactions are made through a 3rd party Web app Stripe. 
@@ -242,6 +244,13 @@ MVC architecture – Ruby on rails – using postgresql – building blocks of t
 
 
 **9. Explain the different high-level components (abstractions) in your App.**
+how the app works in steps information you're entering into the models 
+
+making a listing
+
+making payment
+
+what you do with the infromation you get from that and do you update a table 
 
 **10. Detail any third party services that your App will use.**
 Stripe - Its software allows individuals and businesses to make and receive payments over the Internet. Stripe provides the technical, fraud prevention, and banking infrastructure required to operate online payment systems. Wikipedia

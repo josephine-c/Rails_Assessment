@@ -32,7 +32,7 @@ The Shopperoo app resolves the problem of shopping for items which users are usu
 
 ### **Shopperoo App Screenshots**
 
-[INSERT images of finished App]
+[INSERT images off finished App]
 
 ## **Tech-stack**
 * Ruby on Rails
@@ -173,6 +173,9 @@ Inital low-fid Wireframes 2
 
 ### **A. Project plan:**
 
+TODO ADD A BRIEF DESCRIPTION OF MORNING AND AFTERNOON MEETINGS 
+STAND UP MEETINGS WITH GARRET
+
 **Start date** of project: 29.04.2019
 
 **Sprint 1 (29.4.2019):** Establishing minimum viable product (MVP), inital wireframes and ERD.
@@ -260,6 +263,8 @@ How people are connecting to it – heorku – internet – https -over the inte
 We want to build an app similar in application to UberEats where there is a selection of an item and a delivery time if within the store hours.
 Thus the network infrastructure the App may be based on would be a website app that is built using Ruby on Rails and deployed on Heroku. Stretch goals would implement Geoloction APIs (for store locations and tracking deliveries).
 
+TALK ABOUT AWS
+
 **5. Identify and describe the software to be used in your App.**
 
 Rails:
@@ -288,15 +293,31 @@ cypress
 * Allows you to have multiple models signed in at the same time;
 * Is based on a modularity concept: use only what you really need.
 
+STRIPE GEM 
+
+AWS 3 GEM
+
 **6. Identify the database to be used in your App and provide a justification for your choice.**
 
 PostgreSQL database will be used in our App as it is an open-source relational database management system emphasizing extensibility and standards compliance. It can handle workloads ranging from single-machine applications to Web services or data warehousing with many concurrent users. PostgreSQL is ACID-compliant and transactional. It offers support for RDBMS features such as updatable and materialized views, triggers, foreign keys; functions and stored procedures. [ref.wiki]
 
 **7. Identify and describe the production database setup (i.e. postgres instance).**
 
-running postgres - how you setup the database - onto heroko and seed into db
+Running postgres - how you setup the database - onto heroko and seed into db
+
+************ REFACTOR FOLLOWING
+Postgres is a client/server application and as a user, we only need access to the client portions of the installation. Once installed, Postgresql allows you to create, access and destroy databases.
+
+Each Postgresql session consists of these 3 elements;
+
+A supervisory Postmaster
+the user's psql program (front-end), and
+1 or more backend database servers which is the postgres process itself
+The fundamental aspect of Postgresql are tables, which in turn are a collection of rows. Each row has the same set of named columns, and each column is of a specific type. Each row also has an unique permanent object identifier.
 
 **8. Describe the architecture of your App.**
+
+MVC RESTFUL ETC.
 
 Users can be both a purchaser and/or a courier/deliverer, tables are made for the orders/listings which are linked to the shops and transactions are made through a 3rd party Web app Stripe. 
 MVC architecture – Ruby on rails – using postgresql – building blocks of the app - heroku
@@ -314,44 +335,66 @@ what you do with the infromation you get from that and do you update a table
 **10. Detail any third party services that your App will use.**
 Stripe - Its software allows individuals and businesses to make and receive payments over the Internet. Stripe provides the technical, fraud prevention, and banking infrastructure required to operate online payment systems. Wikipedia
 
+Heroku - 
+
+AWS - 
+
+
+
 **11. Describe (in general terms) the data structure of marketplace apps that are similar to your own (e.g. eBay, Airbnb).**
+
+Airtasker - 
+
+Other examples -
 
 **12. Discuss the database relations to be implemented.**
 
-One to one
-One to many
-Many to many
+One to one - 
+One to many - 
+Many to many - 
 
 **13. Describe your project’s models in terms of the relationships (active record associations) they have with each other.**
-
+#
 USER: HAS ONE:
 •	Cart
 •	Contact {Polymorphic}
 •	Accepts nested attributes
+#
 HAS MANY:
 •	Listings
 •	Deliveries
 •	Pictures {attached}
-Being a user is a requirement for most features within the app. And thus has many connections and associations. This ID is way to link
+Being a user is a requirement for most features within the app. And thus has many connections and associations. This ID is way to link those associations.
+
 SHOP: HAS ONE:
 •	Contact {Polymorphic}
+#
 HAS MANY:
 •	Listings 
 •	Products 
 •	Pictures {attached}
+#
 PRODUCTS: BELONGS TO:
 •	shop
+#
+
 HAS MANY:
 •	Listings product {join table}
 •	Listings through listings product
 •	Cart product {join table}
 •	Carts through cart product
 •	Pictures {attached}
+#
+
 ORDER: BELONGS TO: 
 •	Listing
+#
+
 LISTINGS_PRODUCT: BELONGS TO:
 •	Listings
 •	Products
+#
+
 LISTING: BELONGS TO:
 •	User
 •	Shop
@@ -360,16 +403,22 @@ LISTING: BELONGS TO:
 	HAS MANY:
 •	Listings product {join table}
 •	Products through listings product
+#
+
 DELIVERY: BELONGS TO:
 •	User
 •	Lisiting 
+#
+
 CART: HAS ONE:
 •	Shop
 •	User {Polymorphic}
+#
+
 HAS MANY:
 •	Cart product {join table}
 •	Products
-
+#
 
 **14. Provide your database schema design.**
 
@@ -401,7 +450,14 @@ Automated testing Cypress
 
 **22. Discuss methods you will use to protect information and data.**
 
+$$$$$ Never handle financial info
+- stripe to protect payment
+- Images storred in amazon
+- devise - exiry
+- in future encrypt phone numbers
+
+
 **23. Research what your legal obligations are in relation to handling user data.**
 
-“The NDB scheme requires entities to notify affected individuals and the Australian Information Commissioner (Commissioner), in the event of an ‘eligible data breach’.”
+“The NDB scheme requires entities to notify affected individuals and the Australian Information Commissioner, in the event of an ‘eligible data breach’.”
 This applies to all entities that hold personal information. This action is required for any breach that could cause serious harm to any individual who the information is applicable to.

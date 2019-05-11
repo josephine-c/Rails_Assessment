@@ -5,14 +5,14 @@
     <h1><%= @shop.name %></h1>
 </div>
 
-<h2><%= @shop.description %></h2>
+<h2>Shop Description:</h2> 
+<p><%= @shop.description %></p>
 
-<div class="products">
+<div class="blocks">
     <% @products.each do |product| %>
         <div class="card">
             <div class="thumbnail">
                 <div class="caption">
-                    <%# <%= image_tag shop.picture if shop.picture.attached? %>
                     <p><%= "#{product.name}: #{product.description} $#{number_with_precision(product.price/100, precision: 2)}"%></p>
                     <p><%= button_to "Add to cart", {controller: "carts", action: "add_to_cart", product: product.id}, method: :post %></p>
                 </div>
@@ -22,4 +22,3 @@
 </div>
   
 <br>
-<%# <%= link_to 'Edit', edit_shop_path(@shop) %> 

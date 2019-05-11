@@ -4,15 +4,14 @@
 <h1>Shops</h1>
 </div>
 
-<div class="shops">
+<div class="blocks">
   <% @shops.each do |shop| %>
     <div class="card">
       <div class="thumbnail">
         <div class="caption">
-          <%# <%= image_tag shop.picture if shop.picture.attached? %>
           <h3><%= link_to shop.name, shop %></h3>
             <p><%= shop.description %></p>
-            <p><%= link_to 'Show Products', shop, class: "btn btn-default" %></p>
+            <%= link_to 'Show Products', shop, class: "btn btn-default" %>
         </div>
       </div>
     </div>
@@ -20,5 +19,3 @@
 </div>
   
 <br>
-
-<%# <%= link_to 'New Shop', new_shop_path %>

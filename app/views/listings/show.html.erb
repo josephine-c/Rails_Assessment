@@ -1,32 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<%# <%= link_to 'Edit', edit_listing_path(@listing) %> 
-<%= link_to 'Back', listings_path %>
+<%# <%= link_to 'Back', listings_path %>
 
 <div class="title-container">
   <h1> Listing for shopping at <%="#{@listing.shop.name}"%></h1>
+</div>
 
+<div>
   <% if @listing.delivery == nil && @listing.user_id != current_user.id %>
   <%= link_to 'Accept Job', {controller: "listings", action: "set_accepted", listing_id: @listing.id}, method: :post, class: "btn btn-default" %>
   <% elsif @listing.status == "accepted" %>
   <%= link_to 'Delivered', {controller: "listings", action: "set_delivered", listing_id: @listing.id}, method: :post, class: "btn btn-default" %>
   <% end %>
-
 </div>
-  <p>Date created:<%= @listing.created_at %></p>
-  <p>Shop:<%= @listing.shop.name %> (Address:<%= @listing.shop.contact.address %>)</p>
-  <p>Product List:</p>
 
-    <% @listings_products.each do |lp| %>
-      <p>Name:<%= lp.product.name %></p>
-      <p>Description:<%= lp.product.description %></p>
-      <p>Quantity:<%= lp.quantity %></p>
-      <p>Price $<%= (lp.product.price)/100 %></p>
-   
-  <% end %>
-
-  <p>Total: $<%= (@listing.total)/100.0 %></p>
-  <p>Purchaser:<%= @listing.user.email %></p>
-  <p>Delivery address:<%= @listing.user.contact.address %></p>
+  <p>Date created: <%= @listing.created_at %></p>
+  <p>Purchaser: <%= @listing.user.email %></p>
+  <p>Delivery address: <%= @listing.user.contact.address %></p>
   <p>Status: <%= @listing.status %></p>
-  <p>Comission (2% of total): $<%= ((@listing.total)/100)*0.02 %></p>
+  <p>Comission (2% of total): $<%= "#{number_with_precision(((@listing.total/100)*0.02), precision: 2)}" %></p>
+
+  <p>Shop: <%= @listing.shop.name %> (Address:<%= @listing.shop.contact.address %>)</p>
+  
+  <h3>Product List:</h3>
+    <div class="blocks">
+      <% @listings_products.each do |lp| %>
+        <div class="card">
+          <div class="thumbnail">
+            <div class="caption">
+              <p>Name:<%= lp.product.name %></p>
+              <p>Description:<%= lp.product.description %></p>
+              <p>Quantity:<%= lp.quantity %></p>
+              <p><%= "Price $#{number_with_precision(lp.product.price/100, precision: 2)}" %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <p>Total: $<%= "#{number_with_precision((@listing.total/100), precision: 2)}" %></p>

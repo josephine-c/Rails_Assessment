@@ -16,14 +16,16 @@
     <header class="container">
       <nav class="navbar navbar-default">
         <div class="container-fluid">
-          <%= link_to "Home", root_path, class: "navbar-brand" %>
+          <%= link_to image_tag('shopperoo_v3_logo_100px.png'), root_path, class: "navbar-brand" %>
+          <h1 class="nav-name"> Shopperoo </h1>
         </div>
         <ul class="nav navbar-nav navbar-right">
           <% if(current_user != nil) %>
+            <li><%= link_to "Home", root_path %></li>
             <li><%= link_to "Shops", shops_path %></li>
-            <li><%= link_to "Jobs Available", listings_path %></li>
+            <li><%= link_to "Jobs", listings_path %></li>
             <li><%= link_to "Cart", current_user.cart %></li>
-            <li><%= link_to "logout", destroy_user_session_path, method: "DELETE" if user_signed_in? %></li>
+            <li><%= link_to "Logout", destroy_user_session_path, method: "DELETE" if user_signed_in? %></li>
           <% else %>
             <%# write our not logged in home %>
             <li><%= link_to "Login", new_user_session_path %></li>

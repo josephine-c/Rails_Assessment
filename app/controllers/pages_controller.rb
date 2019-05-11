@@ -7,6 +7,7 @@ class PagesController < ApplicationController
     
             # grab all deliveries(courier jobs) that match current user id.
             # @jobs = Listing.find(Deilvery.where(user_id: current_user.id).listing_id)
+            @jobs = Delivery.where(user_id: current_user.id)
         end
     end
 end

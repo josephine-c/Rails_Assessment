@@ -22,6 +22,13 @@ class ListingsController < ApplicationController
     redirect_to root_path
   end
 
+  def set_delivered
+    @listing = Listing.find(params[:listing_id])
+    @listing.status = 4
+    @listing.save
+    redirect_to root_path
+  end
+
   # GET /listings/new
   def new
     @listing = Listing.new

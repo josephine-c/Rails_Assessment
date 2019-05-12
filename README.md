@@ -174,8 +174,7 @@ Inital low-fid Wireframes 2
 
 ### **A. Project plan:**
 
-TODO ADD A BRIEF DESCRIPTION OF MORNING AND AFTERNOON MEETINGS 
-STAND UP MEETINGS WITH GARRET
+**Meetings:** Meetings were conducted twice a day to decide on sprints each day, deciding if we achieved our goals and if further work is required.
 
 **Start date** of project: 29.04.2019
 
@@ -294,59 +293,49 @@ cypress
 * Allows you to have multiple models signed in at the same time;
 * Is based on a modularity concept: use only what you really need.
 
-STRIPE GEM 
-
-AWS 3 GEM
-
 **6. Identify the database to be used in your App and provide a justification for your choice.**
 
 PostgreSQL database will be used in our App as it is an open-source relational database management system emphasizing extensibility and standards compliance. It can handle workloads ranging from single-machine applications to Web services or data warehousing with many concurrent users. PostgreSQL is ACID-compliant and transactional. It offers support for RDBMS features such as updatable and materialized views, triggers, foreign keys; functions and stored procedures. [ref.wiki]
 
 **7. Identify and describe the production database setup (i.e. postgres instance).**
 
+PostgreSQL is a powerful, open source object-relational database system that uses and extends the SQL language combined with many features that safely store and scale the most complicated data workloads.
+
+Postgres is a client/server application, allowing us to create, access and destroy databases.
+
 Running postgres - how you setup the database - onto heroko and seed into db
 
-************ REFACTOR FOLLOWING
-Postgres is a client/server application and as a user, we only need access to the client portions of the installation. Once installed, Postgresql allows you to create, access and destroy databases.
+At its base level a postgresql database is made up of tables, With each table being made up of rows and columns. Each row has the same sets of columns and each column is a specific type. Each row is identified by a unique identification. This identification is used to reference all columns and the data held within them.
 
-Each Postgresql session consists of these 3 elements;
-
-A supervisory Postmaster
-the user's psql program (front-end), and
-1 or more backend database servers which is the postgres process itself
-The fundamental aspect of Postgresql are tables, which in turn are a collection of rows. Each row has the same set of named columns, and each column is of a specific type. Each row also has an unique permanent object identifier.
 
 **8. Describe the architecture of your App.**
-
-MVC RESTFUL ETC.
 
 Users can be both a purchaser and/or a courier/deliverer, tables are made for the orders/listings which are linked to the shops and transactions are made through a 3rd party Web app Stripe. 
 MVC architecture – Ruby on rails – using postgresql – building blocks of the app - heroku
 
 
 **9. Explain the different high-level components (abstractions) in your App.**
-how the app works in steps information you're entering into the models 
 
-making a listing
-
-making payment
-
-what you do with the infromation you get from that and do you update a table 
+Our application follows an MVC structure and breaking tasks up into views, models and controllers.
+The application is taking advantage of Faker and Devise Gems to add extra features(making payments and user verification).
+For styling we're using bootstrap.
 
 **10. Detail any third party services that your App will use.**
 Stripe - Its software allows individuals and businesses to make and receive payments over the Internet. Stripe provides the technical, fraud prevention, and banking infrastructure required to operate online payment systems. Wikipedia
 
-Heroku - 
+Heroku - Heroku is a cloud platform that lets companies build, deliver, monitor and scale apps. We're using this service to deploy our application.
 
-AWS - 
+AWS - We are using this service to store any files and pictures that are required to be saved.
+
+Git Hub and Git kraken - We used these services for version control.
 
 
 
 **11. Describe (in general terms) the data structure of marketplace apps that are similar to your own (e.g. eBay, Airbnb).**
 
-Airtasker - 
+Airtasker - Similar posting for jobs and accpeting of jobs structure.
 
-Other examples -
+Uber, menulog, deliveroo - The app requires a user to deliver items other users.
 
 **12. Discuss the database relations to be implemented.**
 
@@ -447,28 +436,44 @@ Trello board has been set up with Backlog/to do, Development, Production, Comple
 
 **19. Provide an overview and description of your Source control process.**
 
-Gitkraken? Github?
 
 During the development process each task was worked and tested on a dedicated branch. Once the feature that was being developed on a branch satisfied tests and was free of errors, remote master was then merged into the local working branch and a merge request could be generated back into remote master. This allows for conflict free coding, separation of tasks and the ability to deal with merge conflicts before touching the master.
+
+To facilitate this process we used github and git kraken.
 
 **20. Provide an overview and description of your Testing process.**
 
 Using byebug, and edge cases to test the App currently
 If there are bugs put into trello
 Automated testing Cypress
+[TEST PICTURES]
 
 **21. Discuss and analyse requirements related to information system security.**
 
+Brute force attacks 
+
+User account hijacking
+
+SQL injection attacks - These can be dangerous as this can be used to steal sensitive information like credit card, password, etc. To lower the risks for an attack, we have used to devise to gather and store sensative data and Stripe to handle any payments.
+
+Session storage - For this application we have avoided using session to store sensative data, as it is not secure enough for security requirements.
+
+Rails has security features that within the framework to prevent SQL injections. In modern rails versions, cookies are now encrypted and provide an extra layer of protection.
+
+Passwords are encrypted and saved to the datebase.
+
 **22. Discuss methods you will use to protect information and data.**
 
-$$$$$ Never handle financial info
-- stripe to protect payment
+- stripe to protect payment and to avoid handling any financial information.
 - Images storred in amazon
-- devise - exiry
+- devise 
 - in future encrypt phone numbers
 
-
 **23. Research what your legal obligations are in relation to handling user data.**
+
+The Privacy Act 1988 defines what personal information.This Act has 13 Australian Privacy Principles (APPs).
+
+We need to follow these principles.
 
 “The NDB scheme requires entities to notify affected individuals and the Australian Information Commissioner, in the event of an ‘eligible data breach’.”
 This applies to all entities that hold personal information. This action is required for any breach that could cause serious harm to any individual who the information is applicable to.

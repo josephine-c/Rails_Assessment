@@ -14,7 +14,7 @@
                 <p>Name: <%= cp.product.name %></p>
                 <p>Cost: $<%= number_with_precision(cp.product.price/100.0, precision: 2) %></p>
                 <% total += cp.product.price %>
-                <%= link_to 'Remove', {controller: "carts", action: "remove_from_cart", cart_product_id: cp.id}, method: :post, class: "btn btn-default" %>
+                <%= link_to 'Remove', {controller: "carts", action: "remove_from_cart", cart_product_id: cp.id},id: "remove-from-cart-button", method: :post, class: "btn btn-default" %>
               </div>
             </div>
           </div>

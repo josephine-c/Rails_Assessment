@@ -34,6 +34,14 @@ The Shopperoo app resolves the problem of shopping for items which users are usu
 
 [INSERT images of finished App]
 
+![Shopperoo's Login](./docs/Applogin.png)
+![Shopperoo's Banner not logged in banner](./docs/AppBannernotloggedin.png)
+![Shopperoo's Banner logged in banner](./docs/AppBannerloggedin.png)
+![Shopperoo's Cart](./docs/AppCart.png)
+![Shopperoo's Home](./docs/AppHome.png)
+![Shopperoo's job listings](./docs/Appjoblistings.png)
+![Shopperoo's shops](./docs/Appshops.png)
+![Shopperoo's success](./docs/Appsigninsuccess.png)
 ## **Tech-stack**
 * Ruby on Rails
 * Puma
@@ -87,7 +95,7 @@ The Shopperoo app resolves the problem of shopping for items which users are usu
 
 #### 1. Home
 * ![Home page IMG]( "")
-* from any page click the 'home' link in the nav bar.
+* from any page click the 'home' link in the nav bar or click the shopperoo logo in the top left hand corner of the webpage.
 
 #### 2. Sign up 
 * ![sign up IMG]( "")
@@ -148,14 +156,13 @@ Having a fun play of words as the name of the App (i.e. Shopperoo = Shopping + K
 ### **2. User stories**:
 * As **Josephine**, I want to be able to get outfit accessories from a cute boutique shop on the other side of town (while I’m busy at work) delivered to me so that I can look my best when delivering my work presentation.
 * As **Bryce**, I want to make money in my spare time performing quick shopping trips, so that I have extra money to spend on the weekend. 
-* As **MonsterThreads**, I want to become more accessible to customers so I can generate more revenue.
+* As **Bill**, I want to become more accessible to customers so I can generate more revenue.
 
 ### **3. A workflow diagram of the user journey/s**
 
 Inital User journey/s
 ![Shopperoo's inital workflow dagram](./docs/user_flow_v1.jpg)
 
-[MAKE & INSERT IMAGE]
 
 ### **4. Wireframes**
 Inital low-fid Wireframes 1
@@ -168,7 +175,14 @@ Inital low-fid Wireframes 2
 ![Shopperoo's shops index](./docs/wireframeshops.png)
 ![Shopperoo's jobs](./docs/wireframejoblistings.png)
 ![Shopperoo's cart show](./docs/wireframecart.png)
-![Shopperoo's wireframes b](./docs/wireframelistingshow.png)
+![Shopperoo's wireframes](./docs/wireframelistingshow.png)
+![login-logout cards](./docs/cards.png)
+
+[PLANNED WIREFRAMES]
+![Shopperoo's wireframes b](./docs/planned1.png)![Shopperoo's wireframes b](./docs/planned2.png)![Shopperoo's wireframes b](./docs/planned3.png)
+[PLANNED PHONE WIREFRAMES]
+![Shopperoo's wireframes b](./docs/mobile1.png)
+![Shopperoo's wireframes b](./docs/mobile2.png)
 
 
 ### **5. Database Entity Relationship Diagrams (ERD)**
@@ -180,7 +194,7 @@ Inital low-fid Wireframes 2
 
 ### **A. Project plan:**
 
-**Meetings:** Meetings were conducted twice a day to decide on sprints each day, deciding if we achieved our goals and if further work is required.
+**Meetings:** Meetings were conducted twice a day to decide on sprints each day,deciding if we achieved our goals and if further work is required.
 
 **Start date** of project: 29.04.2019
 
@@ -259,29 +273,23 @@ The problem we are trying to solve by building a Ruby on Rails two-sided market 
 
 **3. Describe the project you will be conducting and how your App will address the needs.**
 
-The web App we are designing and developing is called Shopperoo. This is a two-sided marketplace, built using Ruby on Rails with PostgreSQL database and deployed on Heroku. Shopperoo is designed to list the products of small boutique stores, allowing Shopperoo users to purchase their desired items from those listed on the App. Users are able to both make purchases (i.e. listings) and work as a shopper/courier (i.e. buy's items from the stores and delivers them to the purchaser) for a fee. The Shopperoo App features cart, checkout..
+The web App we are designing and developing is called Shopperoo. This is a two-sided marketplace, built using Ruby on Rails with PostgreSQL database and deployed on Heroku. Shopperoo is designed to list the products of small boutique stores, allowing Shopperoo users to purchase their desired items from those listed on the App. Users are able to both make purchases (i.e. listings) and work as a shopper/courier (i.e. buy's items from the stores and delivers them to the purchaser) for a fee. The Shopperoo App features cart, checkout, list creation and list fulfilment. This deals with the needs of users that we identified when coming up with the idea for this app.
 
-Describe the project The actual features in the app – cart and check out )(what the project is about, how you fix the issue) will you be conducting and how. your App will address the needs. More detail about q1 - 
 
 **4. Describe the network infrastructure the App may be based on.**
 
-How people are connecting to it – heorku – internet – https -over the internet and web server that’s running. Connecting to db and how it does it
-We want to build an app similar in application to UberEats where there is a selection of an item and a delivery time if within the store hours.
-Thus the network infrastructure the App may be based on would be a website app that is built using Ruby on Rails and deployed on Heroku. Stretch goals would implement Geoloction APIs (for store locations and tracking deliveries).
+Our app will be hosted on heroku. The app was deployed to Heroku through Git. We are taking advantage of the managed SQL database, Postgresql.
 
+Heroku is a cloud platform that lets companies build, deliver, monitor and scale apps.
+
+The app is run inside dynos. A dyno being a virtualized Unix container that contains your application. The way that denos are run and deployed allows for scalability.
+
+In future we would like to include geolocating and directions for ease of use.
 
 **5. Identify and describe the software to be used in your App.**
 
-Rails: Development framework, used to scaffold and provide inbuilt functionality.
-Faker: Provide test data to allow for seeding of database.
-Devise: Used for authentication and verification of users on creation, editing and application access.
-Stripe: Used to handle transactions and avoid storring sensative data.
-Ultrahook: Allows for testing of webhooks send by stripe forwarding any information to localhost.
-cypress: Automatic testing to ensure the application is working correctly.
-
-
 #### Ruby-On-Rails
-* Rails is a model–view–controller (MVC) framework, providing default structures for a database, a web service, and web pages.
+* Rails is a model–view–controller (MVC) framework, providing default structures for a database, a web service, and web pages. Used to scaffold and provide inbuilt functionality.
 
 #### Faker - GEM
 * [Faker - github link.](https://github.com/stympy/faker)
@@ -298,9 +306,21 @@ cypress: Automatic testing to ensure the application is working correctly.
 * Allows you to have multiple models signed in at the same time;
 * Is based on a modularity concept: use only what you really need.
 
+#### Cypress: 
+* [Cypress link](https://www.cypress.io/)
+* Automatic testing to ensure the application is working correctly.
+
+#### Ultrahook: 
+* Allows for testing of webhooks sent by stripe forwarding any information to localhost. 
+* [Ultrahook link](http://www.ultrahook.com/)
+
+#### Stripe: 
+* [Stripe link](https://stripe.com)
+* Used to handle transactions and avoid storring sensative data.
+
 **6. Identify the database to be used in your App and provide a justification for your choice.**
 
-PostgreSQL database will be used in our App as it is an open-source relational database management system emphasizing extensibility and standards compliance. It can handle workloads ranging from single-machine applications to Web services or data warehousing with many concurrent users. PostgreSQL is ACID-compliant and transactional. It offers support for RDBMS features such as updatable and materialized views, triggers, foreign keys; functions and stored procedures. [ref.wiki]
+PostgreSQL database will be used in our App as it is an open-source relational database management system which can handle more complex database operations, than an “embedded” database, such as SQLite, which only runs within an app. PostgreSQL works on a client-server model which requires a database server to set up and run over the network. PostgreSQL is ACID-compliant and transactional. ACID stands for Atomicity, Consistency, Isolation, and Durability, and these are important for reliable transactions. Other benefits of PostgresQL is that its storage is much larger than SQLite. PostgreSQL also handles multiple users and with clear levels of permission very well, while SQLite does not have user management. PostreSQL can handle workloads ranging from single-machine applications to Web services or data warehousing with many concurrent users.  PostgreSQL features include being updatable and materialized views, triggers, foreign keys; functions and stored procedures. PostgreSQL is highly recommended when data integrity and reliability is highly concerned, you need custom procedures which are extensible to run a complex task and handle data complexity with ease. PostgreSQL gives you the functionality to maintain such a complex database smoothly without limitations.
 
 **7. Identify and describe the production database setup (i.e. postgres instance).**
 
@@ -308,39 +328,43 @@ PostgreSQL is a powerful, open source object-relational database system that use
 
 Postgres is a client/server application, allowing us to create, access and destroy databases.
 
-Running postgres - how you setup the database - onto heroko and seed into db
-
-At its base level a postgresql database is made up of tables, With each table being made up of rows and columns. Each row has the same sets of columns and each column is a specific type. Each row is identified by a unique identification. This identification is used to reference all columns and the data held within them.
-
+At its base level a postgresql database is made up of tables, with each table being made up of rows and columns. Each row has the same sets of columns and each column is a specific type. Each row is identified by a unique identification. This identification is used to reference all columns relevent to the row and the data held within them.
 
 **8. Describe the architecture of your App.**
 
-Users can be both a purchaser and/or a courier/deliverer, tables are made for the orders/listings which are linked to the shops and transactions are made through a 3rd party Web app Stripe. 
-MVC architecture – Ruby on rails – using postgresql – building blocks of the app - heroku
+Users can be both a purchaser and/or a courier/deliverer, tables are made for the orders/listings which are linked to the shops and transactions are made through a 3rd party Web app Stripe.
 
+This is done using rails which has a large amount in-build functionality,out of the box. 
+When developing this app we followed MVC architecture.
 
 **9. Explain the different high-level components (abstractions) in your App.**
 
-Our application follows an MVC structure and breaking tasks up into views, models and controllers.
-The application is taking advantage of Faker and Devise Gems to add extra features(making payments and user verification).
-For styling we're using bootstrap.
+Our application follows an MVC structure, breaking tasks up into views, models and controllers.
+The application is taking advantage of Faker and Devise Gems to add extra features(assisitng in making payments and user verification).
+For styling we're using Bootstrap. Bootstrap is an open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS- and JavaScript-based design templates for typography, forms, buttons, navigation and other interface components, which is a convenient framework to implement styling on a web app quickly
 
 **10. Detail any third party services that your App will use.**
-Stripe - Its software allows individuals and businesses to make and receive payments over the Internet. Stripe provides the technical, fraud prevention, and banking infrastructure required to operate online payment systems. Wikipedia
+Stripe - This software allows individuals and businesses to make and receive payments over the Internet. Stripe provides the technical, fraud prevention, and banking infrastructure required to operate online payment systems. Allowing us to limit risks for sensative data breaches, especially for credit card information.
 
 Heroku - Heroku is a cloud platform that lets companies build, deliver, monitor and scale apps. We're using this service to deploy our application.
 
-AWS - We are using this service to store any files and pictures that are required to be saved.
+AWS - We are using this service to store any files and pictures that are required to be saved(through active storage).
 
-Git Hub and Git kraken - We used these services for version control.
+GitHub and Gitkraken - We used these services for version control and visualize the devlopment of the project.
 
-
+Ultrahooks - Used in testing to allow for the sending of webhooks from stripe to our local development server.
 
 **11. Describe (in general terms) the data structure of marketplace apps that are similar to your own (e.g. eBay, Airbnb).**
 
-Airtasker - Similar posting for jobs and accpeting of jobs structure.
+Airtasker - Similar structure in posting for jobs and accpeting of jobs.
 
-Uber, menulog, deliveroo - The app requires a user to deliver items other users.
+Uber, menulog, deliveroo - The app requires a user to deliver items other users similar to what we planned for out app.
+
+Some elements shared with these two sided marketplaces are:
+
+* Authentication and verification of users.
+* Payment systems
+* Order systems
 
 **12. Discuss the database relations to be implemented.**
 
@@ -354,7 +378,7 @@ HAS MANY:
 •	Listings
 •	Deliveries
 •	Pictures {attached}
-Being a user is a requirement for most features within the app. And thus has many connections and associations. This ID is way to link those associations.
+Being a user is a requirement for most features within the app. And thus has many connections and associations. This ID is a way to link those associations.
 
 SHOP: HAS ONE:
 •	Contact {Polymorphic}
@@ -413,25 +437,31 @@ HAS MANY:
 **13. Describe your project’s models in terms of the relationships (active record associations) they have with each other.**
 
 User contains an email and password
-- We wanted to keep this as revelent to a user account and exdend an extra information into the contact table.
+- We wanted to keep this as revelent to a user account and extend any sharred information into the contact table.
 
 Contact is for shops and users.
-- Right now each row holds an address and a phone number for users and shops. 
+- Each row holds an address and a phone number for users and shops. 
+- This is linked to either a shop or a User
 
 Cart/cart_products hold the users desired items.
 - This is a list of products related to the user. 
+- A join table representing a shopping cart. This links the User and the items they desire.
 
-listings/listings_products is a copy of cart
-- Only for listings that have gone past the stripe checkout process successfully.
+Listings/listings_products is a copy of cart
+- Listings and listings products are only created once a user takes an order past the stripe checkout phase.
+- refrences both products and the listings associated with them.
 
 Deliveries is a way to make users able to do both deliveries and create listings.
 - By having this makes a listing able to access two users, the courier and the one that created the list.
+- links the courier and the listing, solving the issue of having two user ids associated with one listing.
 
 Transactions holds stripe verification.
 - This will allow refunds and cancelling orders for users in future.
+- Linked to its listings
 
 Shops
-- holds a description for the shop
+- Holds a description for the shop
+- Has many items associated with it.
 
 Products
 - Associated with a shop
@@ -446,7 +476,7 @@ Products
 **User stories**:
 * As **Josephine**, I want to be able to get outfit accessories from a cute boutique shop on the other side of town (while I’m busy at work) delivered to me so that I can look my best when delivering my work presentation.
 * As **Bryce**, I want to make money in my spare time performing quick shopping trips, so that I have extra money to spend on the weekend. 
-* As **MonsterThreads**, I want to become more accessible to customers so I can generate more revenue.
+* As **Bill**, I want to become more accessible to customers so I can generate more revenue.
 
 **16. Provide Wireframes for your App.**
 
@@ -460,25 +490,26 @@ wireframehomeloggedin.png)
 
 **17. Describe the way tasks are allocated and tracked in your project.**
 
-Tasks are identified by breaking problems down as a team and posting each individual part on the backlog of the team trello board. As team members complete work and move the associated cards from the to-do list, they move more work to from the backlog  onto to-do and assign it to themselves. 
+Tasks are identified by breaking problems down as a team and posting each individual part on the backlog of the team trello board. As team members complete work and move the associated cards from the to-do list, they move more work to from the backlog onto the to-do and assign it to themselves. 
+
+GitKraken was also useful in tracking work on different features and our overall progress on the project.
 
 **18. Discuss how Agile methodology is being implemented in your project.**
 
-Every day we do a sprint
-Trello board has been set up with Backlog/to do, Development, Production, Complete. Agile methodology is being implemented in the project by finishing tasks and then making new tasks as required for the next sprints. 
+Every day is started with a sprint meeting, where we discuss what should be done durring this period. After disscussion tasks are assigned using the trello board.
+The trello board has been set up with Backlog, to do, Development, Production and Complete to assist in identifying what stage each task is at. Agile methodology is being implemented in the project by reviewing finished tasks and how they may affect the project going on. Allowing us to make adjustments as the project moves forward.
 
 **19. Provide an overview and description of your Source control process.**
 
 
 During the development process each task was worked and tested on a dedicated branch. Once the feature that was being developed on a branch satisfied tests and was free of errors, remote master was then merged into the local working branch and a merge request could be generated back into remote master. This allows for conflict free coding, separation of tasks and the ability to deal with merge conflicts before touching the master.
 
-To facilitate this process we used github and git kraken.
+To facilitate this process we used github and gitkraken.
 
 **20. Provide an overview and description of your Testing process.**
 
-Using byebug, and edge cases to test the App currently
-If there are bugs put into trello
-Automated testing Cypress
+For testing we used bybug, manual tests and cypress.
+Cypress tests:
 - Testing for all nav bar features.
     - log in
     - log out
@@ -488,21 +519,22 @@ Automated testing Cypress
     - Shops
 - Testing for create listing.
 - Testing for create new user.
-- testing for add to cart.
+- Testing for add to cart.
+
+Byebug test:
+This was mostly used for debugging but at some stages of development Byebug was used to allow us to check the value of elements and to view what data/elements could be accessed through different stages of the program.
+
+Manual testing: This was simply checking that the correct rows were being changed and the program was behaving as exected.
 
 **21. Discuss and analyse requirements related to information system security.**
 
-Brute force attacks 
-
-User account hijacking
-
 SQL injection attacks - These can be dangerous as this can be used to steal sensitive information like credit card, password, etc. To lower the risks for an attack, we have used to devise to gather and store sensative data and Stripe to handle any payments.
 
-Session storage - For this application we have avoided using session to store sensative data, as it is not secure enough for security requirements.
+Session storage - For this application we have avoided using session to store sensative data, as its use creates vulnerabilities and is not secure enough for our security requirements.
 
 Rails has security features that within the framework to prevent SQL injections. In modern rails versions, cookies are now encrypted and provide an extra layer of protection.
 
-Passwords are encrypted and saved to the datebase.
+Passwords are encrypted before storage and saved to the datebase.
 
 **22. Discuss methods you will use to protect information and data.**
 
@@ -514,8 +546,6 @@ Passwords are encrypted and saved to the datebase.
 **23. Research what your legal obligations are in relation to handling user data.**
 
 The Privacy Act 1988 defines what personal information.This Act has 13 Australian Privacy Principles (APPs).
-
-We need to follow these principles.
 
 “The NDB scheme requires entities to notify affected individuals and the Australian Information Commissioner, in the event of an ‘eligible data breach’.”
 This applies to all entities that hold personal information. This action is required for any breach that could cause serious harm to any individual who the information is applicable to.

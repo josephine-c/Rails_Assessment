@@ -32,7 +32,7 @@ The Shopperoo app resolves the problem of shopping for items which users are usu
 
 ### **Shopperoo App Screenshots**
 
-[INSERT images off finished App]
+[INSERT images of finished App]
 
 ## **Tech-stack**
 * Ruby on Rails

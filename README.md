@@ -479,7 +479,16 @@ To facilitate this process we used github and git kraken.
 Using byebug, and edge cases to test the App currently
 If there are bugs put into trello
 Automated testing Cypress
-[TEST PICTURES]
+- Testing for all nav bar features.
+    - log in
+    - log out
+    - home
+    - cart
+    - jobs
+    - Shops
+- Testing for create listing.
+- Testing for create new user.
+- testing for add to cart.
 
 **21. Discuss and analyse requirements related to information system security.**
 

@@ -162,8 +162,14 @@ Inital low-fid Wireframes 1
 ![Shopperoo's inital wireframes a](./docs/wireframe_v1a.jpg)
 Inital low-fid Wireframes 2
 ![Shopperoo's inital wireframes b](./docs/wireframe_v1b.jpg)
+#
+![Shopperoo's home logged in](./docs/wireframehomeloggedin.png)
+![Shopperoo's shops index](./docs/wireframeshops.png)
+![Shopperoo's shops index](./docs/wireframeshops.png)
+![Shopperoo's jobs](./docs/wireframejoblistings.png)
+![Shopperoo's cart show](./docs/wireframecart.png)
+![Shopperoo's wireframes b](./docs/wireframelistingshow.png)
 
-[BRYCE INSERT FINAL]
 
 ### **5. Database Entity Relationship Diagrams (ERD)**
 
@@ -263,16 +269,15 @@ How people are connecting to it – heorku – internet – https -over the inte
 We want to build an app similar in application to UberEats where there is a selection of an item and a delivery time if within the store hours.
 Thus the network infrastructure the App may be based on would be a website app that is built using Ruby on Rails and deployed on Heroku. Stretch goals would implement Geoloction APIs (for store locations and tracking deliveries).
 
-TALK ABOUT AWS
 
 **5. Identify and describe the software to be used in your App.**
 
-Rails:
-Faker:
-Devise:
-Stripe:
-Ultrahook
-cypress
+Rails: Development framework, used to scaffold and provide inbuilt functionality.
+Faker: Provide test data to allow for seeding of database.
+Devise: Used for authentication and verification of users on creation, editing and application access.
+Stripe: Used to handle transactions and avoid storring sensative data.
+Ultrahook: Allows for testing of webhooks send by stripe forwarding any information to localhost.
+cypress: Automatic testing to ensure the application is working correctly.
 
 
 #### Ruby-On-Rails
@@ -339,11 +344,6 @@ Uber, menulog, deliveroo - The app requires a user to deliver items other users.
 
 **12. Discuss the database relations to be implemented.**
 
-One to one - 
-One to many - 
-Many to many - 
-
-**13. Describe your project’s models in terms of the relationships (active record associations) they have with each other.**
 #
 USER: HAS ONE:
 •	Cart
@@ -410,6 +410,33 @@ HAS MANY:
 •	Products
 #
 
+**13. Describe your project’s models in terms of the relationships (active record associations) they have with each other.**
+
+User contains an email and password
+- We wanted to keep this as revelent to a user account and exdend an extra information into the contact table.
+
+Contact is for shops and users.
+- Right now each row holds an address and a phone number for users and shops. 
+
+Cart/cart_products hold the users desired items.
+- This is a list of products related to the user. 
+
+listings/listings_products is a copy of cart
+- Only for listings that have gone past the stripe checkout process successfully.
+
+Deliveries is a way to make users able to do both deliveries and create listings.
+- By having this makes a listing able to access two users, the courier and the one that created the list.
+
+Transactions holds stripe verification.
+- This will allow refunds and cancelling orders for users in future.
+
+Shops
+- holds a description for the shop
+
+Products
+- Associated with a shop
+- These are the stock and contents of a shop.
+
 **14. Provide your database schema design.**
 
 ![Shopperoo's Database Entity Relationship Diagram](./docs/ERD_Shopperoo_v6.png)
@@ -422,7 +449,14 @@ HAS MANY:
 * As **MonsterThreads**, I want to become more accessible to customers so I can generate more revenue.
 
 **16. Provide Wireframes for your App.**
-[BRYCE INSERT]
+
+
+wireframehomeloggedin.png)
+![Shopperoo's shops index](./docs/wireframeshops.png)
+![Shopperoo's shops index](./docs/wireframeshops.png)
+![Shopperoo's jobs](./docs/wireframejoblistings.png)
+![Shopperoo's cart show](./docs/wireframecart.png)
+![Shopperoo's wireframes b](./docs/wireframelistingshow.png)
 
 **17. Describe the way tasks are allocated and tracked in your project.**
 
@@ -430,7 +464,6 @@ Tasks are identified by breaking problems down as a team and posting each indivi
 
 **18. Discuss how Agile methodology is being implemented in your project.**
 
-Road map – 
 Every day we do a sprint
 Trello board has been set up with Backlog/to do, Development, Production, Complete. Agile methodology is being implemented in the project by finishing tasks and then making new tasks as required for the next sprints. 
 

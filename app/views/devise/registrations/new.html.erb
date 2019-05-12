@@ -13,32 +13,32 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, id: "password", autocomplete: "new-password" %>
   </div>
 
-  <div class="field">
+  <div class="field" id="test-pass-conf">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, id: "password-confirmation", autocomplete: "new-password" %>
   </div>
 
   <%= f.fields_for :contact do |f| %>
     <div>
-      <%= f.label :phone %><br />
-      <%= f.text_field :phone %>
+      <%= f.label :phone%><br />
+      <%= f.text_field :phone, id: "phone" %>
     </div>
 
     <div>
       <%= f.label :fax %><br />
-      <%= f.text_field :fax %>
+      <%= f.text_field :fax, id: "fax" %>
     </div>
 
     <div>
       <%= f.label :address %><br />
-      <%= f.text_field :address %>
+      <%= f.text_field :address, id: "address" %>
     </div>
 
     <div class="actions">
-      <%= f.submit "Sign up" %>
+      <%= f.submit "Sign up", id: "submit-button" %>
     </div>
   <% end %>
 <% end %>

@@ -1,12 +1,25 @@
 <p id="notice"><%= notice %></p>
+
+<div class="title-container">
+  <h1>My Cart</h1>
+</div>
+
 <% unless @cart_products == nil %>
     <% total = 0 %>
-    <% @cart_products.each do |cp| %>
-      <p>Name: <%= cp.product.name %></p>
-      <p>Cost: $<%= number_with_precision(cp.product.price/100.0, precision: 2) %></p>
-      <% total += cp.product.price %>
-      <%= link_to 'Remove', {controller: "carts", action: "remove_from_cart", cart_product_id: cp.id}, method: :post %>
-    <% end %>
+      <div class="blocks">
+        <% @cart_products.each do |cp| %>
+          <div class="card">
+            <div class="thumbnail">
+              <div class="caption">
+                <p>Name: <%= cp.product.name %></p>
+                <p>Cost: $<%= number_with_precision(cp.product.price/100.0, precision: 2) %></p>
+                <% total += cp.product.price %>
+                <%= link_to 'Remove', {controller: "carts", action: "remove_from_cart", cart_product_id: cp.id}, method: :post, class: "btn btn-default" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     <p>Total: $<%= number_with_precision(total/100.0, precision: 2) %></p>
     <%# <div id="stripe_redirect"> %>
     <%# <%= link_to 'Checkout', {controller: "listings", action: "create", cart_id: @cart_products.first.cart_id}, method: :post %>

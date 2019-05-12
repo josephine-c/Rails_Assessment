@@ -3,49 +3,47 @@
 </div>
 
 <% if(current_user != nil) %>
-<%# write our logged in home %>
   <%= form_with url: shops_path, method: "get" do |f| %>
 
-  <h2>Happy Shoppings!</h2>
+  <p class="slogan">Happy Shoppings!</p>
     <div>
       <h2>My Purchases</h2>
-      <div class="own_listing">
-        <% @lists.each do |list| %>
-          <% if list.status == "paid" %>
-          <div class="card">
-              <div class="thumbnail">
-                  <div class="caption">
-                       <h3>Listing <%= list.id %></h3>
-                        <p>Shop:<%= list.shop.name %></p>
-                        <p>Date created:<%= list.created_at %></p>
-                        <p>Status:<%= list.status %></p>
-                        <p>Total: $<%= number_with_precision(list.total/100, precision: 2) %> </p>
-                        <p><%= link_to 'Show', list, class: "btn btn-default" %></p>
+        <div class="blocks">
+          <% @lists.each do |list| %>
+            <% if list.status == "paid" %>
+              <div class="card">
+                  <div class="thumbnail">
+                      <div class="caption">
+                            <h3>Listing <%= list.id %></h3>
+                            <p>Shop:<%= list.shop.name %></p>
+                            <p>Date created:<%= list.created_at %></p>
+                            <p>Status:<%= list.status %></p>
+                            <p>Total: $<%= number_with_precision(list.total/100, precision: 2) %> </p>
+                            <%= link_to 'Show', list, class: "btn btn-default" %>
+                      </div>
                   </div>
               </div>
-          </div>
+            <% end %>
           <% end %>
-      <% end %>
-    </div>
-
-  <div>
+        </div>
+      <div>
     <h2>My Jobs</h2>
-        <div class="own_listing">
+        <div class="blocks">
           <% @jobs.each do |job| %> 
             <% if job.listing.status == "accepted" %>
-            <div class="card"> 
-                <div class="thumbnail">
-                    <div class="caption">
-                      <h3>Job <%= job.listing.id %></h3>
-                      <p>Purchaser:<%= job.listing.user.email %></p>
-                      <p>Shop:<%= job.listing.shop.name %></p>
-                      <p>Date created:<%= job.listing.created_at %></p>
-                      <p>Status:<%= job.listing.status %></p>
-                      <p>Total: $<%= job.listing.total %></p>
-                      <p><%= link_to 'Show', job.listing, class: "btn btn-default" %></p>
-                    </div>
-                </div>
-            </div>
+              <div class="card"> 
+                  <div class="thumbnail">
+                      <div class="caption">
+                        <h3>Job <%= job.listing.id %></h3>
+                        <p>Purchaser:<%= job.listing.user.email %></p>
+                        <p>Shop:<%= job.listing.shop.name %></p>
+                        <p>Date created:<%= job.listing.created_at %></p>
+                        <p>Status:<%= job.listing.status %></p>
+                        <p>Total: $<%= job.listing.total %></p>
+                        <%= link_to 'Show', job.listing, class: "btn btn-default" %>
+                      </div>
+                  </div>
+              </div>
             <% end %>
           <% end %>
         </div>
@@ -53,6 +51,5 @@
 <% end %>
 
 <% else %>
-  <%# write our not logged in home %>
   <h2>Your adventure to happy fast shopping awaits! Join or Login now</h2>   
 <% end %>

@@ -166,6 +166,7 @@ Inital low-fid Wireframes 2
 [BRYCE INSERT FINAL]
 
 ### **5. Database Entity Relationship Diagrams (ERD)**
+
 ![Shopperoo's Database Entity Relationship Diagram](./docs/ERD_Shopperoo_v6.png)
 
 ## **Details of planning process** 
@@ -422,9 +423,17 @@ HAS MANY:
 
 **14. Provide your database schema design.**
 
+![Shopperoo's Database Entity Relationship Diagram](./docs/ERD_Shopperoo_v6.png)
+
 **15. Provide User stories for your App.**
 
+**User stories**:
+* As **Josephine**, I want to be able to get outfit accessories from a cute boutique shop on the other side of town (while I’m busy at work) delivered to me so that I can look my best when delivering my work presentation.
+* As **Bryce**, I want to make money in my spare time performing quick shopping trips, so that I have extra money to spend on the weekend. 
+* As **MonsterThreads**, I want to become more accessible to customers so I can generate more revenue.
+
 **16. Provide Wireframes for your App.**
+[BRYCE INSERT]
 
 **17. Describe the way tasks are allocated and tracked in your project.**
 
@@ -437,6 +446,8 @@ Every day we do a sprint
 Trello board has been set up with Backlog/to do, Development, Production, Complete. Agile methodology is being implemented in the project by finishing tasks and then making new tasks as required for the next sprints. 
 
 **19. Provide an overview and description of your Source control process.**
+
+Gitkraken? Github?
 
 During the development process each task was worked and tested on a dedicated branch. Once the feature that was being developed on a branch satisfied tests and was free of errors, remote master was then merged into the local working branch and a merge request could be generated back into remote master. This allows for conflict free coding, separation of tasks and the ability to deal with merge conflicts before touching the master.
 

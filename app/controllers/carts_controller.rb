@@ -28,8 +28,8 @@ class CartsController < ApplicationController
                 listing_id: @cart.id
             }
         },
-        success_url: 'http://localhost:3000/payments/success',
-        cancel_url: 'http://localhost:3000/cancel',
+        success_url: 'https://blooming-lowlands-28068.herokuapp.com/payments/success',
+        cancel_url: 'https://blooming-lowlands-28068.herokuapp.com/cancel',
         )
     @stripe_session_id = stripe_session.id
     end

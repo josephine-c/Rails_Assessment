@@ -263,16 +263,15 @@ How people are connecting to it – heorku – internet – https -over the inte
 We want to build an app similar in application to UberEats where there is a selection of an item and a delivery time if within the store hours.
 Thus the network infrastructure the App may be based on would be a website app that is built using Ruby on Rails and deployed on Heroku. Stretch goals would implement Geoloction APIs (for store locations and tracking deliveries).
 
-TALK ABOUT AWS
 
 **5. Identify and describe the software to be used in your App.**
 
-Rails:
-Faker:
-Devise:
-Stripe:
-Ultrahook
-cypress
+Rails: Development framework, used to scaffold and provide inbuilt functionality.
+Faker: Provide test data to allow for seeding of database.
+Devise: Used for authentication and verification of users on creation, editing and application access.
+Stripe: Used to handle transactions and avoid storring sensative data.
+Ultrahook: Allows for testing of webhooks send by stripe forwarding any information to localhost.
+cypress: Automatic testing to ensure the application is working correctly.
 
 
 #### Ruby-On-Rails

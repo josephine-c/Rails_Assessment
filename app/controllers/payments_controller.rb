@@ -5,7 +5,7 @@ class PaymentsController < ApplicationController
         client_reference_id = params[:data][:object][:client_reference_id]
         @listing = Listing.create(user_id: client_reference_id, shop_id: User.find(client_reference_id).cart.shop_id, status: 1, total: User.find(client_reference_id).cart.total)
         CartProduct.where(cart_id: User.find(client_reference_id).cart.id).each do |cart_product|
-            ListingsProduct.create(listing_id: @listing.id, product_id: cart_product.id)
+            ListingsProduct.create(listing_id: @listing.id, product_id: cart_product.product_id)
         end
 
         # create order

@@ -1,6 +1,4 @@
 describe("Rails user test", function() {
-
-
     it("Create a new user", function() {
         cy.visit("users/join")
         cy.get("input[type='email']").type("cypresstest" + Math.floor((Math.random() * 2000) + 1) + "@test.com")

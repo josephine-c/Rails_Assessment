@@ -14,7 +14,7 @@
             <div class="thumbnail">
                 <div class="caption">
                     <p><%= "#{product.name}: #{product.description} $#{number_with_precision(product.price/100, precision: 2)}"%></p>
-                    <p><%= button_to "Add to cart", {controller: "carts", action: "add_to_cart", product: product.id}, method: :post %></p>
+                    <p><%= button_to "Add to cart", {controller: "carts", action: "add_to_cart", product: product.id}, id: "add-to-cart-button", method: :post %></p>
                 </div>
             </div>
         </div>

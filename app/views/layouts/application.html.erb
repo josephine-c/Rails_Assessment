@@ -21,10 +21,10 @@
         </div>
         <ul class="nav navbar-nav navbar-right">
           <% if(current_user != nil) %>
-            <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "Shops", shops_path %></li>
-            <li><%= link_to "Jobs", listings_path %></li>
-            <li><%= link_to "Cart", current_user.cart %></li>
+            <li><%= link_to "Home", root_path, id: "home-button" %></li>
+            <li><%= link_to "Shops", shops_path, id: "shops-button" %></li>
+            <li><%= link_to "Jobs", listings_path, id: "jobs-button" %></li>
+            <li><%= link_to "Cart", current_user.cart, id: "cart-button" %></li>
             <li><%= link_to "Logout", destroy_user_session_path, method: "DELETE" if user_signed_in? %></li>
           <% else %>
             <%# write our not logged in home %>
